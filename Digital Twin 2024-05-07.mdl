@@ -1,0 +1,2336 @@
+{UTF-8}
+fraction choosing our mealworms=
+	NORMAL FRACTION CHOOSING OUR MEALWORMS*EFFECT OF PRICE ON FRACTION CHOOSING US(PRICE OF DRIED MEALWORMS\
+		/COMPETITORS MEALWORM PRICE)
+	~	Dmnl
+	~		|
+
+fraction of FRASS customers leaving=
+	FRASS delivery delay effect
+	~	Dmnl
+	~		|
+
+fraction of mealworm customers leaving=
+	mealworm delivery delay effect
+	~	Dmnl
+	~		|
+
+FRASS delivery delay effect=
+	EFFECT OF DELIVERY DELAY ON CUSTOMERS LEAVING(FRASS delivery delay/TARGET FRASS DELIVERY DELAY\
+		)
+	~	Dmnl
+	~		|
+
+fraction choosing our FRASS=
+	NORMAL FRACTION CHOOSING OUR FRASS*EFFECT OF PRICE ON FRACTION CHOOSING US(PRICE OF FRASS\
+		/COMPETITORS FRASS PRICE)
+	~	
+	~		|
+
+mealworm delivery delay effect=
+	EFFECT OF DELIVERY DELAY ON CUSTOMERS LEAVING(mealworm delivery delay/TARGET MEALWORM DELIVERY DELAY\
+		)
+	~	Dmnl
+	~		|
+
+NORMAL FRACTION CHOOSING OUR MEALWORMS=
+	0.5
+	~	Dmnl
+	~		|
+
+NORMAL FRACTION CHOOSING OUR FRASS=
+	0.5
+	~	Dmnl
+	~		|
+
+PRICE OF DRIED MEALWORMS=
+	COMPETITORS MEALWORM PRICE*Markup
+	~	dollars/Packages
+	~		|
+
+customers choosing other FRASS=
+	(1-fraction choosing our FRASS)*(FRASS customer non customer contact+Potential Customers Using FRASS\
+		/FRASS MARKETING TIME
+	)
+	~	customers/Week
+	~		|
+
+customers choosing our FRASS=
+	fraction choosing our FRASS*(FRASS customer non customer contact+Potential Customers Using FRASS\
+		/FRASS MARKETING TIME
+	)
+	~	customers/Week
+	~		|
+
+Markup=
+	1+300/100
+	~	Dmnl
+	~		|
+
+new FRASS orders=
+	customers choosing our FRASS*FRASS packages per customer
+	~	Packages/Week
+	~		|
+
+PRICE OF FRASS=
+	COMPETITORS FRASS PRICE*Markup
+	~	dollars/Packages
+	~		|
+
+FRASS market share=
+	(FRASS Customers+FRASS Customers Waiting)/(FRASS Customers+FRASS Customers Waiting+Potential Customers Using FRASS\
+		+Customers Using Other FRASS
+	)
+	~	Dmnl
+	~		|
+
+costs=
+	total fixed cost+total operating cost
+	~	dollars/Week
+	~		|
+
+mealworm customers choosing other companies=
+	(1-fraction choosing our mealworms)*(customer non customer contact for mealworms+Potential Customers Using Mealworms\
+		/MEALWORM MARKETING TIME
+	)
+	~	customers/Week
+	~		|
+
+NORMAL PACKAGES PER CUSTOMER=
+	1
+	~	Packages/customers
+	~		|
+
+total equipment cost=
+	facilities*COST OF EQUIPMENT*EQUIPMENT PER FACILITIES/EQUIPMENT LIFETIME
+	~	dollars/Week
+	~		|
+
+growth rate of facilities=
+	IF THEN ELSE((demand supply ratio>1), IF THEN ELSE(Retained Earnings>=(FACILITIES COST\
+		+EQUIPMENT COST), INITIAL FACILITIES
+	/TIME TO RENOVATE FACILITY,0)
+	, 0 )
+	~	Facilities/Week
+	~		|
+
+EFFECT OF PRICE ON FRACTION CHOOSING US(
+	[(0,0)-(10,10)],(0,1.76),(0.1,1.72),(0.2,1.66),(0.3,1.6),(0.4,1.54),(0.5,1.46),(0.6,\
+		1.38),(0.7,1.29),(0.8,1.2),(0.9,1.1),(1,1),(1.1,0.9),(1.2,0.8),(1.3,0.71),(1.4,0.62\
+		),(1.5,0.54),(1.6,0.46),(1.7,0.4),(1.8,0.34),(1.9,0.28),(2,0.24),(2.1,0.2),(2.2,0.17\
+		),(2.3,0.14),(2.4,0.11),(2.5,0.09),(2.6,0.08),(2.7,0.06),(2.8,0.05),(2.9,0.04),(3,0.036\
+		),(3.1,0.03),(3.2,0.02),(3.5,0.01),(4,0))
+	~	Dmnl
+	~		|
+
+EFFECT OF PRICE ON PACKAGES PER CUSTOMER(
+	[(0,0)-(10,10)],(0,9.43),(0.1,9.09),(0.2,8.58),(0.3,7.86),(0.4,6.91),(0.5,5.75),(0.6\
+		,4.51),(0.7,3.32),(0.8,2.32),(0.9,1.55),(1,1),(1.1,0.63),(1.2,0.39),(1.3,0.24),(1.4\
+		,0.15),(1.5,0.09),(1.6,0.06),(1.7,0.03),(1.8,0.02),(1.9,0.01),(2,0.01))
+	~	Dmnl
+	~		|
+
+cost of storage of bins=
+	STORAGE COST PER BIN*total bins
+	~	dollars/Week
+	~		|
+
+Cumulative Facilities Cost= INTEG (
+	building cost,
+		INITIAL CUMULATIVE FACILITIES COST)
+	~	dollars
+	~		|
+
+INITIAL CUMULATIVE FACILITIES COST=
+	0
+	~	dollars
+	~		|
+
+FACILITIES COST=
+	INITIAL FACILITIES*FACILITY RENOVATIONS COST
+	~	dollars
+	~		|
+
+EQUIPMENT COST=
+	EQUIPMENT PER FACILITIES*COST OF EQUIPMENT*INITIAL FACILITIES
+	~	dollars
+	~		|
+
+COMPETITORS FRASS PRICE=
+	2
+	~	dollars/Packages
+	~		|
+
+COMPETITORS MEALWORM PRICE=
+	10
+	~	dollars/Packages
+	~		|
+
+mealworm customers choosing us=
+	fraction choosing our mealworms*(customer non customer contact for mealworms+Potential Customers Using Mealworms\
+		/MEALWORM MARKETING TIME
+	)
+	~	customers/Week
+	~		|
+
+FRASS packages per customer=
+	1
+	~	Packages/customers
+	~		|
+
+mealworm packages per customer=
+	1
+	~	Packages/customers
+	~		|
+
+new mealworm orders=
+	mealworm customers choosing us*mealworm packages per customer
+	~	Packages/Week
+	~		|
+
+Mealworm Products in Use= INTEG (
+	new mealworm shipments+replacement mealworm shipments-replacement mealworm orders,
+		mealworm packages per customer*Mealworm Customers)
+	~	Packages
+	~		|
+
+adding new facilities=
+	growth rate of facilities*(1-facilities/MAXIMUM FACILITIES)
+	~	Facilities/Week
+	~		|
+
+desired farm workers=
+	MAX(INITIAL WORKERS,facilities*PEOPLE PER FACILITY)
+	~	People
+	~		|
+
+leaving mealworm market=
+	Mealworm Customers/NORMAL TIME AS MEALWORM CUSTOMER
+	~	customers/Week
+	~		|
+
+TIME TO RENOVATE FACILITY=
+	52
+	~	Week
+	~		|
+
+Customers Using Other Mealworm Company= INTEG (
+	mealworm customers choosing other companies+mealworm customers leaving-using other mealworms leaving\
+		,
+		INITIAL MEALWORM CUSTOMERS USING OTHER COMPANY)
+	~	customers
+	~		|
+
+new potential mealworm customers=
+	leaving mealworm market+never using mealworms leaving+using other mealworms leaving
+	~	customers/Week
+	~		|
+
+FRASS demand supply ratio=
+	FRASS packages demand/FRASS packages supply
+	~	Dmnl
+	~		|
+
+leaving FRASS market=
+	FRASS Customers/NORMAL TIME AS FRASS CUSTOMER
+	~	customers/Week
+	~		|
+
+mealworm demand supply ratio=
+	mealworm packages demand/mealworm packages supply
+	~	Dmnl
+	~		|
+
+never using FRASS leaving=
+	Households Never Using FRASS/NORMAL TIME AS FRASS CUSTOMER
+	~	customers/Week
+	~		|
+
+never using mealworms leaving=
+	Households Never Using Mealworms/NORMAL TIME AS MEALWORM CUSTOMER
+	~	customers/Week
+	~		|
+
+Customers Using Other FRASS= INTEG (
+	customers choosing other FRASS+FRASS customers leaving-using other FRASS leaving,
+		INITIAL CUSTOMERS USING OTHER FRASS)
+	~	customers
+	~		|
+
+new potential FRASS customers=
+	leaving FRASS market+never using FRASS leaving+using other FRASS leaving
+	~	customers/Week
+	~		|
+
+using other mealworms leaving=
+	Customers Using Other Mealworm Company/NORMAL TIME AS MEALWORM CUSTOMER
+	~	customers/Week
+	~		|
+
+Potential Mealworm Households Outside the System= INTEG (
+	new potential mealworm customers-household becoming customers not using mealworms-households becoming customers using mealworms\
+		,
+		initial potential mealworm customers)
+	~	customers
+	~		|
+
+Potential FRASS Households Outside the System= INTEG (
+	new potential FRASS customers-households becoming customers not using FRASS-households becoming customers using FRASS\
+		,
+		initial potential FRASS customers)
+	~	customers
+	~		|
+
+Households Never Using FRASS= INTEG (
+	never using FRASS-never using FRASS leaving,
+		INITIAL HOUSEHOLDS NEVER USING FRASS)
+	~	customers
+	~		|
+
+demand supply ratio=
+	MAX( mealworm demand supply ratio,FRASS demand supply ratio)
+	~	Dmnl
+	~		|
+
+using other FRASS leaving=
+	Customers Using Other FRASS/NORMAL TIME AS FRASS CUSTOMER
+	~	customers/Week
+	~		|
+
+Households Never Using Mealworms= INTEG (
+	never using mealworms-never using mealworms leaving,
+		INITIAL HOUSEHOLDS NEVER USING MEALWORMS)
+	~	customers
+	~		|
+
+FRASS packages limit=
+	MIN(FRASS packages demand, FRASS packages supply )
+	~	Packages/Week
+	~		|
+
+cost of labor=
+	WAGES OF WORKERS*(Packaging Workers+Farm Workers)*HOURS PER WEEK
+	~	dollars/Week
+	~		|
+
+MAXIMUM BINS PER FACILITY=
+	3000
+	~	Bins/Facilities
+	~		|
+
+mealworm production=
+	MIN( desired mealworm production,mealworm packages limit )
+	~	Packages/Week
+	~		|
+
+FRASS production=
+	MIN( desired FRASS production,FRASS packages limit )
+	~	Packages/Week
+	~		|
+
+mealworm packages demand=
+	potential mealworm production
+	~	Packages/Week
+	~		|
+
+mealworm packages limit=
+	MIN(mealworm packages demand, mealworm packages supply )
+	~	Packages/Week
+	~		|
+
+FRASS packages demand=
+	potential FRASS production
+	~	Packages/Week
+	~		|
+
+maximum mealworm bins=
+	MAXIMUM BINS PER FACILITY*allocation of bins to mealworms*facilities
+	~	Bins
+	~		|
+
+New FRASS Backlog= INTEG (
+	new FRASS orders-new FRASS shipments,
+		new FRASS orders*TARGET FRASS DELIVERY DELAY)
+	~	Packages
+	~		|
+
+New Mealworm Backlog= INTEG (
+	new mealworm orders-new mealworm shipments,
+		new mealworm orders*TARGET MEALWORM DELIVERY DELAY)
+	~	Packages
+	~		|
+
+Replacement Mealworm Backlog= INTEG (
+	replacement mealworm orders-replacement mealworm shipments,
+		TARGET MEALWORM DELIVERY DELAY*replacement mealworm orders)
+	~	Packages
+	~		|
+
+Replacement FRASS Backlog= INTEG (
+	replacement FRASS orders-replacement FRASS shipments,
+		TARGET FRASS DELIVERY DELAY*replacement FRASS orders)
+	~	Packages
+	~		|
+
+maturing pupa=
+	Pupa Bins/PUPA MATURITY TIME
+	~	Bins/Week
+	~		|
+
+total bins=
+	Beetle Bins+Mealworm Bins+Pupa Bins
+	~	Bins
+	~		|
+
+mealworms kg per package=
+	KG PER MEALWORM PACKAGE/DRYING FRACTION
+	~	kg/Packages
+	~		|
+
+Pupa Bins= INTEG (
+	mealworms to pupa-maturing pupa,
+		INITIAL PUPA BINS)
+	~	Bins
+	~		|
+
+mealworms to pupa=
+	Mealworm Bins*(1-FRACTION OF MEALWORM BINS HARVESTED)/MEALWORM MATURITY TIME
+	~	Bins/Week
+	~		|
+
+KG MEALWORMS PER BIN=
+	0.5
+	~	kg/Bins
+	~		|
+
+mealworm harvesting=
+	Mealworm Bins*FRACTION OF MEALWORM BINS HARVESTED/MEALWORM MATURITY TIME
+	~	Bins/Week
+	~		|
+
+new mealworm bins=
+	Mealworm Bins/BEETLE LIFE EXPECTANCY*(1-(Mealworm Bins/maximum mealworm bins)^32)
+	~	Bins/Week
+	~		|
+
+Mealworm Bins= INTEG (
+	new mealworm bins-mealworm harvesting-mealworms to pupa,
+		INITIAL MEALWORM BINS)
+	~	Bins
+	~		|
+
+FRACTION OF MEALWORM BINS HARVESTED=
+	0.999
+	~	Dmnl
+	~		|
+
+mealworm packages supply=
+	mealworm harvesting*KG MEALWORMS PER BIN/mealworms kg per package
+	~	Packages/Week
+	~		|
+
+facilities costs=
+	adding new facilities*FACILITY RENOVATIONS COST
+	~	dollars/Week
+	~		|
+
+revenue from FRASS=
+	PRICE OF FRASS*total FRASS shipments-15
+	~	dollars/Week
+	~		|
+
+facilities=
+	INTEGER(Building Facilities)
+	~	Facilities
+	~		|
+
+revenue from mealworms=
+	total mealworm shipments*PRICE OF DRIED MEALWORMS
+	~	dollars/Week
+	~		|
+
+building cost=
+	facilities costs
+	~	dollars/Week
+	~		|
+
+NORMAL TIME AS FRASS CUSTOMER=
+	20*52
+	~	Week
+	~		|
+
+NORMAL TIME AS MEALWORM CUSTOMER=
+	20*52
+	~	Week
+	~		|
+
+FRASS packages supply=
+	FRASS per week/KG OF FRASS PER PACKAGE
+	~	Packages/Week
+	~		|
+
+ALLOCATION OF BINS TO BEETLES=
+	0.05
+	~	Dmnl
+	~		|
+
+allocation of bins to mealworms=
+	1-ALLOCATION OF BINS TO BEETLES-ALLOCATION OF BINS TO PUPA
+	~	Dmnl
+	~		|
+
+ALLOCATION OF BINS TO PUPA=
+	0.05
+	~	Dmnl
+	~		|
+
+MAXIMUM FACILITIES=
+	10000
+	~	Facilities
+	~		|
+
+mealworm capacity investment=
+	(mealworm capacity adjustment+replacement mealworm investment)
+	~	Packages/(Week*Week)
+	~		|
+
+PEOPLE PER FACILITY=
+	1
+	~	People/Facilities
+	~		|
+
+PACKAGES PER HOUR=
+	100
+	~	Packages/Hours
+	~		|
+
+HOURS PER WEEK=
+	40
+	~	Hours/Week/People
+	~		|
+
+desired packaging workers=
+	(total FRASS shipments+total mealworm shipments)/(PACKAGES PER HOUR*HOURS PER WEEK)
+	~	People
+	~		|
+
+food cost=
+	(COST OF CARROTS*CARROTS PER BIN/KILOGRAMS PER POUND+COST OF FOOD*FOOD PER BIN)*total bins
+	~	dollars/Week
+	~		|
+
+total operating cost=
+	cost of labor+cost of storage of bins+food cost
+	~	dollars/Week
+	~		|
+
+FRASS orders received=
+	total FRASS orders
+	~	Packages/Week
+	~		|
+
+completed FRASS customers=
+	FRASS Customers Waiting*(1-fraction of FRASS customers leaving)/FRASS delivery delay
+	~	customers/Week
+	~		|
+
+initial potential FRASS customers=
+	INITIAL HOUSEHOLDS*FRACTION OF HOUSEHOLDs WHO ARE POTENTIAL FRASS CUSTOMERS
+	~	customers
+	~		|
+
+KG PER MEALWORM PACKAGE=
+	0.28
+	~	kg/Packages
+	~		|
+
+DRYING FRACTION=
+	0.39
+	~	Dmnl
+	~		|
+
+total FRASS shipments=
+	FRASS production
+	~	Packages/Week
+	~		|
+
+FRASS customers leaving=
+	FRASS Customers Waiting*fraction of FRASS customers leaving/FRASS delivery delay
+	~	customers/Week
+	~		|
+
+INITIAL FRASS CUSTOMERS WAITING=
+	0
+	~	customers
+	~		|
+
+FRASS ADOPTION TIME=
+	52
+	~	Week
+	~		|
+
+KG OF FRASS PER PACKAGE=
+	0.9
+	~	kg/Packages
+	~		|
+
+Average FRASS Orders= INTEG (
+	change in average FRASS orders received,
+		INITIAL FRASS ORDERS RECEIVED)
+	~	Packages/Week
+	~		|
+
+AVERAGE FRASS PRODUCT LIFE=
+	4
+	~	Week
+	~		|
+
+awareness of FRASS=
+	Potential Customers Not Using FRASS*(1-FRACTION NEVER USING FRASS)/FRASS AWARENESS TIME
+	~	customers/Week
+	~		|
+
+FRASS MARKETING TIME=
+	52
+	~	Week
+	~		|
+
+FRASS Backlog= INTEG (
+	FRASS orders received-FRASS production,
+		desired FRASS backlog)
+	~	Packages
+	~		|
+
+FRASS backlog correction=
+	(FRASS Backlog-desired FRASS backlog)/TIME TO CORRECT FRASS BACKLOG
+	~	Packages/Week
+	~		|
+
+FRACTION NEVER USING FRASS=
+	0.99
+	~	Dmnl
+	~		|
+
+FRASS capacity reductions=
+	FRASS Capacity/FRASS CAPACITY LIFE
+	~	Packages/(Week*Week)
+	~		|
+
+FRASS Capacity= INTEG (
+	FRASS capacity investment-FRASS capacity reductions,
+		desired FRASS capacity)
+	~	Packages/Week
+	~		|
+
+FRASS capacity adjustment=
+	(desired FRASS capacity-FRASS Capacity)/TIME TO ADJUST FRASS CAPACITY
+	~	Packages/(Week*Week)
+	~		|
+
+FRASS CAPACITY LIFE=
+	20*52
+	~	Week
+	~		|
+
+FRACTION OF HOUSEHOLDs WHO ARE POTENTIAL FRASS CUSTOMERS=
+	0.001
+	~	Dmnl
+	~		|
+
+change in average FRASS orders received=
+	(FRASS orders received-Average FRASS Orders)/TIME TO AVERAGE FRASS ORDERS
+	~	Packages/(Week*Week)
+	~		|
+
+FRASS CONTACT TIME=
+	52
+	~	Week
+	~		|
+
+Potential Customers Not Using FRASS= INTEG (
+	households becoming customers not using FRASS-awareness of FRASS-never using FRASS,
+		INITIAL POTENTIAL CUSTOMERS NOT USING FRASS)
+	~	customers
+	~		|
+
+FRASS Customers Waiting= INTEG (
+	customers choosing our FRASS-completed FRASS customers-FRASS customers leaving,
+		INITIAL FRASS CUSTOMERS WAITING)
+	~	customers
+	~		|
+
+Potential Customers Using FRASS= INTEG (
+	awareness of FRASS+households becoming customers using FRASS-customers choosing other FRASS\
+		-customers choosing our FRASS,
+		INITIAL POTENTIAL CUSTOMERS USING FRASS)
+	~	customers
+	~		|
+
+FRASS customer non customer contact=
+	Potential Customers Using FRASS/FRASS CONTACT TIME*FRASS market share
+	~	customers/Week
+	~		|
+
+TARGET FRASS DELIVERY DELAY=
+	4
+	~	Week
+	~		|
+
+FRASS Customers= INTEG (
+	completed FRASS customers-leaving FRASS market,
+		INITIAL FRASS CUSTOMERS)
+	~	customers
+	~		|
+
+TIME TO ADJUST FRASS CAPACITY=
+	17
+	~	Week
+	~		|
+
+TIME TO AVERAGE FRASS ORDERS=
+	4
+	~	Week
+	~		|
+
+INITIAL FRASS CUSTOMERS=
+	10
+	~	customers
+	~		|
+
+FRASS delivery delay=
+	FRASS Backlog/FRASS production
+	~	Week
+	~		|
+
+desired FRASS backlog=
+	TARGET FRASS DELIVERY DELAY*Average FRASS Orders
+	~	Packages
+	~		|
+
+desired FRASS capacity=
+	desired FRASS production
+	~	Packages/Week
+	~		|
+
+INITIAL HOUSEHOLDS NEVER USING FRASS=
+	0
+	~	customers
+	~		|
+
+total food=
+	total bins*(CARROTS PER BIN+FOOD PER BIN)
+	~	kg/Week
+	~		|
+
+desired FRASS production=
+	Average FRASS Orders+FRASS backlog correction
+	~	Packages/Week
+	~		|
+
+new FRASS shipments=
+	New FRASS Backlog*total FRASS shipments/total FRASS backlog
+	~	Packages/Week
+	~		|
+
+households becoming customers using FRASS=
+	Potential FRASS Households Outside the System/FRASS ADOPTION TIME*FRACTION OF CUSTOMERS USING FRASS
+	~	customers/Week
+	~		|
+
+total FRASS orders=
+	new FRASS orders+replacement FRASS orders
+	~	Packages/Week
+	~		|
+
+EFFECT OF DELIVERY DELAY ON CUSTOMERS LEAVING(
+	[(0,0)-(10,10)],(1,0),(2,0.01),(3,0.02),(4,0.03),(5,0.05),(6,0.08),(7,0.12),(8,0.18)\
+		,(9,0.27),(10,0.38),(11,0.5),(12,0.62),(13,0.73),(14,0.82),(15,0.88),(16,0.92),(17,\
+		0.95),(18,0.97),(19,0.98),(20,0.99))
+	~	Dmnl
+	~		|
+
+INITIAL POTENTIAL CUSTOMERS NOT USING FRASS=
+	0
+	~	customers
+	~		|
+
+INITIAL POTENTIAL CUSTOMERS USING FRASS=
+	0
+	~	customers
+	~		|
+
+total FRASS backlog=
+	New FRASS Backlog+Replacement FRASS Backlog
+	~	Packages
+	~		|
+
+never using FRASS=
+	Potential Customers Not Using FRASS*FRACTION NEVER USING FRASS/FRASS AWARENESS TIME
+	~	customers/Week
+	~		|
+
+FRASS capacity investment=
+	FRASS capacity adjustment+replacement FRASS investment
+	~	Packages/(Week*Week)
+	~		|
+
+potential FRASS production=
+	FRASS Capacity
+	~	Packages/Week
+	~		|
+
+FRASS AWARENESS TIME=
+	52
+	~	Week
+	~		|
+
+FRASS Products in Use= INTEG (
+	new FRASS shipments+replacement FRASS shipments-replacement FRASS orders,
+		FRASS packages per customer*Mealworm Customers)
+	~	Packages
+	~		|
+
+replacement FRASS investment=
+	FRASS capacity reductions
+	~	Packages/(Week*Week)
+	~		|
+
+FRACTION OF CUSTOMERS USING FRASS=
+	0.26
+	~	Dmnl
+	~		|
+
+TIME TO CORRECT FRASS BACKLOG=
+	4
+	~	Week
+	~		|
+
+replacement FRASS orders=
+	FRASS Products in Use/AVERAGE FRASS PRODUCT LIFE
+	~	Packages/Week
+	~		|
+
+replacement FRASS shipments=
+	Replacement FRASS Backlog*total FRASS shipments/total FRASS backlog
+	~	Packages/Week
+	~		|
+
+INITIAL CUSTOMERS USING OTHER FRASS=
+	1
+	~	customers
+	~		|
+
+INITIAL FRASS ORDERS RECEIVED= INITIAL(
+	FRASS orders received)
+	~	Packages/Week
+	~		|
+
+households becoming customers not using FRASS=
+	Potential FRASS Households Outside the System/FRASS ADOPTION TIME*(1-FRACTION OF CUSTOMERS USING FRASS\
+		)
+	~	customers/Week
+	~		|
+
+potential mealworm production=
+	Mealworm Capacity
+	~	Packages/Week
+	~		|
+
+change in average mealworm orders received=
+	(mealworm orders received-Average Mealworm Orders)/TIME TO AVERAGE MEALWORM ORDERS
+	~	Packages/(Week*Week)
+	~		|
+
+completed mealworm customers=
+	Mealworm Customers Waiting*(1-fraction of mealworm customers leaving)/mealworm delivery delay
+	~	customers/Week
+	~		|
+
+INITIAL MEALWORM ORDERS RECEIVED= INITIAL(
+	mealworm orders received)
+	~	Packages/Week
+	~		|
+
+Average Mealworm Orders= INTEG (
+	change in average mealworm orders received,
+		INITIAL MEALWORM ORDERS RECEIVED)
+	~	Packages/Week
+	~		|
+
+TIME TO CORRECT MEALWORM BACKLOG=
+	4
+	~	Week
+	~		|
+
+Mealworm Capacity= INTEG (
+	mealworm capacity investment-mealworm capacity reductions,
+		desired mealworm capacity)
+	~	Packages/Week
+	~		|
+
+Mealworm Backlog= INTEG (
+	mealworm orders received-mealworm production,
+		desired mealworm backlog)
+	~	Packages
+	~		|
+
+mealworm backlog correction=
+	(Mealworm Backlog-desired mealworm backlog)/TIME TO CORRECT MEALWORM BACKLOG
+	~	Packages/Week
+	~		|
+
+mealworm customers leaving=
+	Mealworm Customers Waiting*fraction of mealworm customers leaving/mealworm delivery delay
+	~	customers/Week
+	~		|
+
+replacement mealworm investment=
+	mealworm capacity reductions
+	~	Packages/(Week*Week)
+	~		|
+
+mealworm market share=
+	(Mealworm Customers+Mealworm Customers Waiting)/(Mealworm Customers+Mealworm Customers Waiting\
+		+Potential Customers Using Mealworms+Customers Using Other Mealworm Company)
+	~	Dmnl
+	~		|
+
+MEALWORM MARKETING TIME=
+	52
+	~	Week
+	~		|
+
+mealworm delivery delay=
+	Mealworm Backlog/mealworm production
+	~	Week
+	~		|
+
+TIME TO ADJUST MEALWORM CAPACITY=
+	17
+	~	Week
+	~		|
+
+mealworm capacity adjustment=
+	(desired mealworm capacity-Mealworm Capacity)/TIME TO ADJUST MEALWORM CAPACITY
+	~	Packages/(Week*Week)
+	~		|
+
+MEALWORM CAPACITY LIFE=
+	20*52
+	~	Week
+	~		|
+
+desired mealworm production=
+	Average Mealworm Orders+mealworm backlog correction
+	~	Packages/Week
+	~		|
+
+Mealworm Customers Waiting= INTEG (
+	mealworm customers choosing us-completed mealworm customers-mealworm customers leaving\
+		,
+		INITIAL MEALWORM CUSTOMERS WAITING)
+	~	customers
+	~		|
+
+TARGET MEALWORM DELIVERY DELAY=
+	4
+	~	Week
+	~		|
+
+total mealworm orders=
+	new mealworm orders+replacement mealworm orders
+	~	Packages/Week
+	~		|
+
+TIME TO AVERAGE MEALWORM ORDERS=
+	4
+	~	Week
+	~		|
+
+total mealworm shipments=
+	mealworm production
+	~	Packages/Week
+	~		|
+
+desired mealworm backlog=
+	TARGET MEALWORM DELIVERY DELAY*Average Mealworm Orders
+	~	Packages
+	~		|
+
+desired mealworm capacity=
+	desired mealworm production
+	~	Packages/Week
+	~		|
+
+mealworm orders received=
+	total mealworm orders
+	~	Packages/Week
+	~		|
+
+mealworm capacity reductions=
+	Mealworm Capacity/MEALWORM CAPACITY LIFE
+	~	Packages/(Week*Week)
+	~		|
+
+INITIAL HOUSEHOLDS NEVER USING MEALWORMS=
+	0
+	~	customers
+	~		|
+
+expenses=
+	(total operating cost+total fixed cost)
+	~	dollars/Week
+	~		|
+
+customer non customer contact for mealworms=
+	Potential Customers Using Mealworms/MEALWORM CONTACT TIME*mealworm market share
+	~	customers/Week
+	~		|
+
+AVERAGE MEALWORM PRODUCT LIFE=
+	4
+	~	Week
+	~		|
+
+awareness of mealworms=
+	Potential Customers Not Using Mealworms*(1-FRACTION NEVER USING MEALWORMS)/MEALWORM AWARENESS TIME
+	~	customers/Week
+	~		|
+
+replacement mealworm shipments=
+	Replacement Mealworm Backlog*total mealworm shipments/total mealworm backlog
+	~	Packages/Week
+	~		|
+
+revenue=
+	total revenue
+	~	dollars/Week
+	~		|
+
+INITIAL MEALWORM CUSTOMERS USING OTHER COMPANY=
+	1
+	~	customers
+	~		|
+
+MEALWORM CONTACT TIME=
+	52
+	~	Week
+	~		|
+
+INITIAL MEALWORM CUSTOMERS=
+	10
+	~	customers
+	~		|
+
+Mealworm Customers= INTEG (
+	completed mealworm customers-leaving mealworm market,
+		INITIAL MEALWORM CUSTOMERS)
+	~	customers
+	~		|
+
+INITIAL MEALWORM CUSTOMERS WAITING=
+	0
+	~	customers
+	~		|
+
+MEALWORM AWARENESS TIME=
+	52
+	~	Week
+	~		|
+
+new mealworm shipments=
+	New Mealworm Backlog*total mealworm shipments/total mealworm backlog
+	~	Packages/Week
+	~		|
+
+Potential Customers Not Using Mealworms= INTEG (
+	household becoming customers not using mealworms-awareness of mealworms-never using mealworms\
+		,
+		INITIAL POTENTIAL CUSTOMERS NOT USING MEALWORMS)
+	~	customers
+	~		|
+
+total mealworm backlog=
+	New Mealworm Backlog+Replacement Mealworm Backlog
+	~	Packages
+	~		|
+
+Potential Customers Using Mealworms= INTEG (
+	awareness of mealworms+households becoming customers using mealworms-mealworm customers choosing other companies\
+		-mealworm customers choosing us,
+		INITIAL POTENTIAL CUSTOMERS USING MEALWORMS)
+	~	customers
+	~		|
+
+never using mealworms=
+	Potential Customers Not Using Mealworms*FRACTION NEVER USING MEALWORMS/MEALWORM AWARENESS TIME
+	~	customers/Week
+	~		|
+
+replacement mealworm orders=
+	Mealworm Products in Use/AVERAGE MEALWORM PRODUCT LIFE
+	~	Packages/Week
+	~		|
+
+hiring of packaging workers=
+	(desired packaging workers-Packaging Workers)/TIME TO HIRE OR LAYOFF
+	~	People/Week
+	~		|
+
+FRACTION NEVER USING MEALWORMS=
+	0.9
+	~	Dmnl
+	~		|
+
+INITIAL PACKAGING WORKERS=
+	0
+	~	People
+	~		|
+
+Packaging Workers= INTEG (
+	hiring of packaging workers,
+		INITIAL PACKAGING WORKERS)
+	~	People
+	~		|
+
+household becoming customers not using mealworms=
+	Potential Mealworm Households Outside the System/MEALWORM ADOPTION TIME*(1-FRACTION OF CUSTOMERS USING MEALWORMS\
+		)
+	~	customers/Week
+	~		|
+
+households becoming customers using mealworms=
+	Potential Mealworm Households Outside the System/MEALWORM ADOPTION TIME*FRACTION OF CUSTOMERS USING MEALWORMS
+	~	customers/Week
+	~		|
+
+MEALWORM ADOPTION TIME=
+	52
+	~	Week
+	~		|
+
+INITIAL POTENTIAL CUSTOMERS NOT USING MEALWORMS=
+	0
+	~	customers
+	~		|
+
+INITIAL POTENTIAL CUSTOMERS USING MEALWORMS=
+	0
+	~	customers
+	~		|
+
+FRACTION OF CUSTOMERS USING MEALWORMS=
+	0.26
+	~	Dmnl
+	~		|
+
+INITIAL HOUSEHOLDS=
+	1.21e+08
+	~	customers
+	~		|
+
+FRACTION OF HOUSEHOLD WHO ARE POTENTIAL MEALWORM CUSTOMERS=
+	0.001
+	~	Dmnl
+	~		|
+
+initial potential mealworm customers=
+	INITIAL HOUSEHOLDS*FRACTION OF HOUSEHOLD WHO ARE POTENTIAL MEALWORM CUSTOMERS
+	~	customers
+	~		|
+
+profit and loss=
+	total revenue-total operating cost-total fixed cost
+	~	dollars/Week
+	~		|
+
+EQUIPMENT LIFETIME=
+	52*10
+	~	Week
+	~		|
+
+EQUIPMENT PER FACILITIES=
+	1
+	~	Equipment/Facilities
+	~		|
+
+Retained Earnings= INTEG (
+	revenue-expenses,
+		INITIAL INVESTMENT)
+	~	dollars
+	~		|
+
+COST OF EQUIPMENT=
+	6000
+	~	dollars/Equipment
+	~		|
+
+total fixed cost=
+	facilities costs+total equipment cost
+	~	dollars/Week
+	~		|
+
+CARROTS PER BIN=
+	0.48/4
+	~	kg/Bins/Week
+	~		|
+
+KILOGRAMS PER POUND=
+	0.45
+	~	kg/pound
+	~		|
+
+COST OF FOOD=
+	20/18
+	~	dollars/kg
+	~		|
+
+FACILITY RENOVATIONS COST=
+	10000
+	~	dollars/Facilities
+	~		|
+
+FOOD CONSUMED PER MEALWORM=
+	4/17
+	~	kg/Week/Bins
+	~		|
+
+food consumed=
+	MIN(Mealworm Bins*FOOD CONSUMED PER MEALWORM,total food)
+	~	kg/Week
+	~		|
+
+FOOD PER BIN=
+	4/17
+	~	kg/Bins/Week
+	~		|
+
+FRACTION OF FRASS TO FOOD=
+	0.3
+	~	Dmnl
+	~		|
+
+FRASS per week=
+	food consumed*FRACTION OF FRASS TO FOOD
+	~	kg/Week
+	~		|
+
+COST OF CARROTS=
+	5/10
+	~	dollars/pound
+	~		|
+
+WAGES OF WORKERS=
+	21
+	~	dollars/Hours
+	~		|
+
+STORAGE COST PER BIN=
+	0.05
+	~	dollars/Week/Bins
+	~		|
+
+INITIAL WORKERS=
+	0
+	~	People
+	~		|
+
+hiring and laying off=
+	(desired farm workers-Farm Workers)/TIME TO HIRE OR LAYOFF
+	~	People/Week
+	~		|
+
+turnover=
+	TURNOVER RATE*Farm Workers
+	~	People/Week
+	~		|
+
+TIME TO HIRE OR LAYOFF=
+	12
+	~	Week
+	~		|
+
+Farm Workers= INTEG (
+	hiring and laying off-turnover,
+		INITIAL WORKERS)
+	~	People
+	~		|
+
+TURNOVER RATE=
+	0
+	~	1/Week
+	~		|
+
+total revenue=
+	revenue from FRASS+revenue from mealworms
+	~	dollars/Week
+	~		|
+
+INITIAL INVESTMENT=
+	-60000
+	~	dollars
+	~		|
+
+INITIAL FACILITIES=
+	1
+	~	Facilities
+	~		|
+
+Building Facilities= INTEG (
+	adding new facilities,
+		INITIAL FACILITIES)
+	~	Facilities
+	~		|
+
+INITIAL BEETLE BINS=
+	0
+	~	Bins
+	~		|
+
+BEETLE LIFE EXPECTANCY=
+	59/7
+	~	Week
+	~		|
+
+Beetle Bins= INTEG (
+	maturing pupa-dying beetles,
+		INITIAL BEETLE BINS)
+	~	Bins
+	~		|
+
+dying beetles=
+	Beetle Bins/BEETLE LIFE EXPECTANCY
+	~	Bins/Week
+	~		|
+
+INITIAL MEALWORM BINS=
+	100
+	~	Bins
+	~		|
+
+INITIAL PUPA BINS=
+	0
+	~	Bins
+	~		|
+
+MEALWORM MATURITY TIME=
+	17
+	~	Week
+	~		|
+
+PUPA MATURITY TIME=
+	1
+	~	Week
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 520
+	~	Week
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Week
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Week [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Week [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Farm Production
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,97,0
+10,1,MEALWORM MATURITY TIME,1568,424,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,PUPA MATURITY TIME,1453,832,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,Mealworm Bins,1172,437,60,22,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,4,48,921,448,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,5,7,3,4,0,0,22,0,0,0,-1--1--1,,1|(1075,448)|
+1,6,7,4,100,0,0,22,0,0,0,-1--1--1,,1|(979,448)|
+11,7,0,1033,448,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,8,new mealworm bins,1033,486,75,30,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,9,INITIAL MEALWORM BINS,1061,320,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,10,48,1177,283,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,11,13,10,4,0,0,22,0,0,0,-1--1--1,,1|(1177,326)|
+1,12,13,3,100,0,0,22,0,0,0,-1--1--1,,1|(1177,394)|
+11,13,0,1177,367,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,14,mealworm harvesting,1260,367,75,30,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,15,1,14,1,0,0,0,0,64,0,-1--1--1,,1|(1384,308)|
+10,16,Pupa Bins,1159,687,42,22,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,17,19,16,4,0,0,22,0,0,0,-1--1--1,,1|(1177,614)|
+1,18,19,3,100,0,0,22,0,0,0,-1--1--1,,1|(1177,505)|
+11,19,0,1177,557,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,20,mealworms to pupa,1260,557,75,30,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,21,1,20,1,0,0,0,0,64,0,-1--1--1,,1|(1445,516)|
+1,22,3,14,1,0,0,0,0,64,0,-1--1--1,,1|(1203,411)|
+1,23,9,3,0,0,0,0,0,64,1,-1--1--1,,1|(0,0)|
+10,24,INITIAL PUPA BINS,1054,601,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,25,Beetle Bins,1176,925,43,22,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,26,28,25,4,0,0,22,0,0,0,-1--1--1,,1|(1176,848)|
+1,27,28,16,100,0,0,22,0,0,0,-1--1--1,,1|(1176,745)|
+11,28,0,1176,787,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,29,maturing pupa,1259,787,75,30,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+12,30,48,1172,1063,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,31,33,30,4,0,0,22,0,0,0,-1--1--1,,1|(1172,1030)|
+1,32,33,25,100,0,0,22,0,0,0,-1--1--1,,1|(1172,970)|
+11,33,0,1172,999,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,34,dying beetles,1255,999,75,30,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,35,BEETLE LIFE EXPECTANCY,1023,793,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,36,25,34,1,0,0,0,0,64,0,-1--1--1,,1|(1242,950)|
+1,37,35,34,1,0,0,0,0,64,0,-1--1--1,,1|(1014,952)|
+1,38,24,16,0,0,0,0,0,64,1,-1--1--1,,1|(0,0)|
+10,39,INITIAL BEETLE BINS,1080,863,75,30,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,40,39,25,1,0,0,0,0,64,1,-1--1--1,,1|(1130,947)|
+1,41,2,29,1,0,0,0,0,64,0,-1--1--1,,1|(1365,834)|
+1,42,16,29,1,0,0,0,0,64,0,-1--1--1,,1|(1179,729)|
+10,43,Time,1765,451,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,44,demand supply ratio,1663,559,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,45,Mealworm Capacity,280,348,46,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,46,3,20,1,0,0,0,0,192,0,-1--1--1,,1|(1245,497)|
+10,47,DRYING FRACTION,393,225,49,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,48,KG PER MEALWORM PACKAGE,443,132,58,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,49,mealworms kg per package,550,365,59,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,50,48,49,1,0,0,0,0,192,0,-1--1--1,,1|(471,250)|
+1,51,47,49,1,0,0,0,0,192,0,-1--1--1,,1|(451,309)|
+10,52,facilities,244,280,45,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,53,ALLOCATION OF BINS TO BEETLES,122,1024,62,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,54,ALLOCATION OF BINS TO PUPA,233,859,62,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,55,allocation of bins to mealworms,240,713,63,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,56,54,55,1,0,0,0,0,192,0,-1--1--1,,1|(243,806)|
+1,57,53,55,1,0,0,0,0,192,0,-1--1--1,,1|(127,913)|
+10,58,maximum mealworm bins,498,762,58,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,59,55,58,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,60,facilities,626,878,45,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,61,60,58,1,0,0,0,0,192,0,-1--1--1,,1|(608,829)|
+10,62,mealworm packages supply,738,132,61,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,63,49,62,1,0,0,0,0,192,0,-1--1--1,,1|(521,218)|
+1,64,14,62,1,0,0,0,0,192,0,-1--1--1,,1|(1188,157)|
+10,65,FRACTION OF MEALWORM BINS HARVESTED,1414,430,81,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,66,65,14,1,0,0,0,0,192,0,-1--1--1,,1|(1367,377)|
+1,67,65,20,1,0,0,0,0,192,0,-1--1--1,,1|(1372,501)|
+10,68,KG MEALWORMS PER BIN,756,340,63,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,69,68,62,1,0,0,0,0,192,0,-1--1--1,,1|(687,279)|
+1,70,3,8,1,0,0,0,0,192,0,-1--1--1,,1|(1126,519)|
+1,71,58,8,1,0,0,0,0,192,0,-1--1--1,,1|(764,661)|
+1,72,35,8,1,0,0,0,0,192,0,-1--1--1,,1|(964,643)|
+10,73,MAXIMUM BINS PER FACILITY,454,947,72,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,74,73,58,1,0,0,0,0,192,0,-1--1--1,,1|(450,863)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Facilities & Bins
+$192-192-192,0,Arial Unicode MS|12||0-0-0|0-0-0|0-0-255|-1--1--1|255-255-255|96,96,100,0
+10,1,Building Facilities,847,189,40,20,3,3,0,0,0,0,0,0,0,0,0,0,0,0
+12,2,48,647,195,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(772,195)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(691,195)|
+11,5,0,732,195,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,adding new facilities,732,233,75,30,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,7,growth rate of facilities,1061,255,75,30,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,INITIAL FACILITIES,849,147,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,9,8,1,1,0,0,0,0,64,1,-1--1--1,,1|(849,157)|
+10,10,demand supply ratio,1075,473,52,28,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,11,10,7,1,0,0,0,0,64,0,-1--1--1,,1|(1092,385)|
+10,12,facilities,753,383,34,23,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,13,7,6,1,0,0,0,0,64,0,-1--1--1,,1|(952,105)|
+10,14,total bins,582,546,44,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,15,1,12,1,0,0,0,0,192,0,-1--1--1,,1|(835,278)|
+10,16,MAXIMUM FACILITIES,937,348,53,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,17,12,6,1,0,0,0,0,192,0,-1--1--1,,1|(691,329)|
+1,18,16,6,1,0,0,0,0,192,0,-1--1--1,,1|(783,307)|
+10,19,Mealworm Bins,366,497,52,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,20,Pupa Bins,334,600,56,14,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,21,Beetle Bins,436,704,61,14,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,22,19,14,1,0,0,0,0,192,0,-1--1--1,,1|(425,498)|
+1,23,20,14,1,0,0,0,0,192,0,-1--1--1,,1|(408,575)|
+1,24,21,14,1,0,0,0,0,192,0,-1--1--1,,1|(464,635)|
+10,25,mealworm packages supply,783,449,80,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,26,FRASS packages supply,801,628,85,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,27,mealworm packages demand,778,548,87,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,28,FRASS packages demand,939,686,85,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,29,mealworm demand supply ratio,900,488,84,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,30,FRASS demand supply ratio,967,596,72,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,31,25,29,1,0,0,0,0,192,0,-1--1--1,,1|(868,448)|
+1,32,27,29,1,0,0,0,0,192,0,-1--1--1,,1|(869,532)|
+1,33,26,30,1,0,0,0,0,192,0,-1--1--1,,1|(871,595)|
+1,34,28,30,1,0,0,0,0,192,0,-1--1--1,,1|(975,640)|
+1,35,29,10,1,0,0,0,0,192,0,-1--1--1,,1|(992,462)|
+1,36,30,10,1,0,0,0,0,192,0,-1--1--1,,1|(1041,567)|
+10,37,TIME TO RENOVATE FACILITY,1259,339,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,38,37,7,1,0,0,0,0,192,0,-1--1--1,,1|(1184,284)|
+1,39,8,7,1,0,0,0,0,192,0,-1--1--1,,1|(946,161)|
+10,40,Retained Earnings,1151,94,46,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,41,FACILITY RENOVATIONS COST,1310,52,72,39,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,42,COST OF EQUIPMENT,1476,302,65,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,43,40,7,1,0,0,0,0,192,0,-1--1--1,,1|(1103,161)|
+10,44,FACILITIES COST,1252,130,53,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,45,EQUIPMENT COST,1282,224,59,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,46,EQUIPMENT PER FACILITIES,1444,169,87,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,47,46,45,1,0,0,0,0,192,0,-1--1--1,,1|(1345,181)|
+1,48,42,45,1,0,0,0,0,192,0,-1--1--1,,1|(1384,304)|
+1,49,41,44,1,0,0,0,0,192,0,-1--1--1,,1|(1306,110)|
+1,50,8,44,1,0,0,0,0,192,0,-1--1--1,,1|(1042,49)|
+1,51,44,7,1,0,0,0,0,192,0,-1--1--1,,1|(1168,158)|
+1,52,45,7,1,0,0,0,0,192,0,-1--1--1,,1|(1204,223)|
+1,53,8,45,1,0,0,0,0,192,0,-1--1--1,,1|(1183,178)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Revenue
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,PRICE OF FRASS,718,63,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,PRICE OF DRIED MEALWORMS,829,515,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,revenue from FRASS,968,175,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,revenue from mealworms,973,347,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,5,1,3,1,0,0,0,0,64,0,-1--1--1,,1|(811,83)|
+10,6,total revenue,1192,262,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,7,3,6,1,0,0,0,0,64,0,-1--1--1,,1|(1064,198)|
+1,8,4,6,1,0,0,0,0,64,0,-1--1--1,,1|(1072,361)|
+10,9,FRASS per week,200,131,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,10,FRASS packages supply,171,227,51,33,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,11,2,4,1,0,0,0,0,192,0,-1--1--1,,1|(870,456)|
+10,12,total FRASS shipments,728,201,55,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,13,total mealworm shipments,754,333,64,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,14,13,4,1,0,0,0,0,192,0,-1--1--1,,1|(853,318)|
+1,15,12,3,1,0,0,0,0,192,0,-1--1--1,,1|(836,220)|
+10,16,Markup,510,367,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,17,16,1,1,0,0,0,0,192,0,-1--1--1,,1|(522,216)|
+1,18,16,2,1,0,0,0,0,192,0,-1--1--1,,1|(530,443)|
+10,19,COMPETITORS FRASS PRICE,460,48,74,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,20,COMPETITORS MEALWORM PRICE,542,650,74,33,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,21,19,1,1,0,0,0,0,192,0,-1--1--1,,1|(580,41)|
+1,22,20,2,1,0,0,0,0,192,0,-1--1--1,,1|(645,648)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Profit and Loss
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Retained Earnings,644,222,63,39,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,2,48,397,227,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,1,4,0,0,22,0,0,0,-1--1--1,,1|(540,227)|
+1,4,5,2,100,0,0,22,0,0,0,-1--1--1,,1|(447,227)|
+11,5,0,494,227,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,revenue,494,265,75,30,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,890,218,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,10,7,4,0,0,22,0,0,0,-1--1--1,,1|(839,218)|
+1,9,10,1,100,0,0,22,0,0,0,-1--1--1,,1|(747,218)|
+11,10,0,793,218,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,expenses,793,256,75,30,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,INITIAL INVESTMENT,634,116,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,13,12,1,1,0,0,0,0,64,1,-1--1--1,,1|(652,147)|
+10,14,total revenue,401,369,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,15,14,6,1,0,0,0,0,64,0,-1--1--1,,1|(470,319)|
+10,16,profit and loss,643,479,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,17,14,16,1,0,0,0,0,64,0,-1--1--1,,1|(464,458)|
+10,18,total operating cost,886,342,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,19,facilities costs,1677,652,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,20,18,11,1,0,0,0,0,64,0,-1--1--1,,1|(815,317)|
+1,21,18,16,1,0,0,0,0,64,0,-1--1--1,,1|(830,389)|
+10,22,total fixed cost,1021,290,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,23,22,11,1,0,0,0,0,64,0,-1--1--1,,1|(959,297)|
+1,24,22,16,1,0,0,0,0,64,0,-1--1--1,,1|(956,431)|
+10,25,costs,617,355,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,26,18,25,1,0,0,0,0,192,0,-1--1--1,,1|(719,395)|
+1,27,22,25,1,0,0,0,0,192,0,-1--1--1,,1|(768,301)|
+10,28,PRICE OF DRIED MEALWORMS,1645,382,69,33,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,29,PRICE OF FRASS,1661,538,49,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,30,Markup,381,112,42,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,31,adding new facilities,1632,43,50,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Labor 
+$192-192-192,0,Arial Unicode MS|12||0-0-0|0-0-0|0-0-255|-1--1--1|255-255-255|96,96,100,0
+10,1,Farm Workers,745,232,42,20,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,2,48,561,235,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,2,100,0,0,22,0,192,0,-1--1--1,,1|(604,235)|
+1,4,5,1,4,0,0,22,0,192,0,-1--1--1,,1|(676,235)|
+11,5,0,644,235,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,hiring and laying off,644,273,75,30,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+11,7,0,854,232,6,8,2,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,8,INITIAL WORKERS,931,323,75,30,8,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,9,desired farm workers,747,347,75,30,8,131,0,0,-1,0,0,0,0,0,0,0,0,0
+10,10,TIME TO HIRE OR LAYOFF,576,418,75,30,8,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,11,9,6,1,0,0,0,0,192,0,-1--1--1,,1|(679,356)|
+1,12,10,6,1,0,0,0,0,192,0,-1--1--1,,1|(540,346)|
+1,13,1,5,1,0,0,0,0,192,0,-1--1--1,,1|(664,183)|
+1,14,8,9,1,0,0,0,0,192,0,-1--1--1,,1|(897,344)|
+10,15,total bins,719,565,75,30,8,130,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+12,16,48,930,232,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,17,19,1,100,0,0,22,0,192,0,-1--1--1,,1|(813,232)|
+1,18,19,16,4,0,0,22,0,192,0,-1--1--1,,1|(886,232)|
+11,19,0,846,232,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,20,turnover,846,270,75,30,40,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,21,1,20,1,0,0,0,0,192,0,-1--1--1,,1|(789,166)|
+10,22,TURNOVER RATE,862,97,75,30,8,131,0,0,-1,0,0,0,0,0,0,0,0,0
+1,23,22,20,1,0,0,0,0,192,0,-1--1--1,,1|(895,184)|
+1,24,8,1,1,0,0,0,0,192,1,-1--1--1,,1|(768,315)|
+10,25,Packaging Workers,824,740,51,34,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+12,26,48,611,746,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,27,29,25,4,0,0,22,0,0,0,-1--1--1,,1|(738,746)|
+1,28,29,26,100,0,0,22,0,0,0,-1--1--1,,1|(656,746)|
+11,29,0,697,746,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,30,hiring of packaging workers,697,775,70,21,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,31,desired packaging workers,664,659,68,21,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,32,31,30,1,0,0,0,0,64,0,-1--1--1,,1|(644,694)|
+10,33,INITIAL PACKAGING WORKERS,855,624,83,21,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,34,33,25,1,0,0,0,0,64,1,-1--1--1,,1|(815,656)|
+10,35,TIME TO HIRE OR LAYOFF,539,858,72,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,36,35,30,1,0,0,0,0,192,0,-1--1--1,,1|(655,824)|
+1,37,25,30,1,0,0,0,0,192,0,-1--1--1,,1|(802,801)|
+10,38,total FRASS shipments,490,588,60,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,39,total mealworm shipments,379,665,72,27,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,40,38,31,1,0,0,0,0,192,0,-1--1--1,,1|(591,596)|
+1,41,39,31,1,0,0,0,0,192,0,-1--1--1,,1|(487,643)|
+10,42,PACKAGES PER HOUR,446,759,55,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,43,42,31,1,0,0,0,0,192,0,-1--1--1,,1|(501,705)|
+10,44,HOURS PER WEEK,581,503,59,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,45,44,31,1,0,0,0,0,192,0,-1--1--1,,1|(629,546)|
+10,46,facilities,951,431,50,14,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,47,PEOPLE PER FACILITY,833,506,63,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,48,46,9,1,0,0,0,0,192,0,-1--1--1,,1|(862,418)|
+1,49,47,9,1,0,0,0,0,192,0,-1--1--1,,1|(770,428)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Costs
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,facilities costs,1231,491,75,30,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,FACILITY RENOVATIONS COST,1316,639,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,adding new facilities,988,633,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,4,2,1,1,0,0,0,0,64,0,-1--1--1,,1|(1327,562)|
+10,5,COST OF CARROTS,106,181,75,30,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,6,COST OF FOOD,154,380,75,30,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,7,cost of storage of bins,577,310,75,30,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,8,total operating cost,432,433,75,30,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,9,7,8,1,0,0,0,0,192,0,-1--1--1,,1|(515,391)|
+10,10,KILOGRAMS PER POUND,367,214,75,30,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,11,STORAGE COST PER BIN,545,175,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,12,WAGES OF WORKERS,530,677,75,30,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,13,cost of labor,366,585,75,30,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,14,12,13,1,0,0,0,0,192,0,-1--1--1,,1|(446,661)|
+1,15,13,8,1,0,0,0,0,64,0,-1--1--1,,1|(413,535)|
+10,16,CARROTS PER BIN,90,295,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,17,FOOD PER BIN,243,432,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,18,COST OF EQUIPMENT,1496,290,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,19,EQUIPMENT PER FACILITIES,1287,338,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,20,EQUIPMENT LIFETIME,1734,298,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,21,total equipment cost,1528,456,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,22,total fixed cost,1499,546,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,23,1,22,1,0,0,0,0,64,0,-1--1--1,,1|(1297,481)|
+1,24,21,22,1,0,0,0,0,64,0,-1--1--1,,1|(1546,483)|
+10,25,total bins,477,242,51,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,26,food cost,321,304,42,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,27,10,26,1,0,0,0,0,192,0,-1--1--1,,1|(325,247)|
+1,28,6,26,1,0,0,0,0,192,0,-1--1--1,,1|(200,341)|
+1,29,16,26,1,0,0,0,0,192,0,-1--1--1,,1|(172,280)|
+1,30,5,26,1,0,0,0,0,192,0,-1--1--1,,1|(217,222)|
+1,31,25,26,1,0,0,0,0,192,0,-1--1--1,,1|(410,260)|
+1,32,17,26,1,0,0,0,0,192,0,-1--1--1,,1|(254,373)|
+1,33,26,8,1,0,0,0,0,192,0,-1--1--1,,1|(381,359)|
+10,34,facilities,1212,410,45,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,35,Farm Workers,207,517,40,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,36,Packaging Workers,149,600,45,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,37,35,13,1,0,0,0,0,192,0,-1--1--1,,1|(289,532)|
+1,38,36,13,1,0,0,0,0,192,0,-1--1--1,,1|(215,583)|
+1,39,3,1,1,0,0,0,0,192,0,-1--1--1,,1|(1043,570)|
+10,40,Cumulative Facilities Cost,1606,637,55,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,41,48,1421,639,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,42,44,41,100,0,0,22,0,192,0,-1--1--1,,1|(1461,639)|
+1,43,44,40,4,0,0,22,0,192,0,-1--1--1,,1|(1527,639)|
+11,44,0,1498,639,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,45,building cost,1498,669,50,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,46,1,45,1,0,0,0,0,192,0,-1--1--1,,1|(1368,538)|
+1,47,11,7,1,0,0,0,0,192,0,-1--1--1,,1|(576,212)|
+10,48,facilities,732,177,45,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,49,HOURS PER WEEK,282,711,59,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,50,49,13,1,0,0,0,0,192,0,-1--1--1,,1|(302,655)|
+10,51,INITIAL CUMULATIVE FACILITIES COST,1711,561,79,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,52,51,40,0,0,0,0,0,192,1,-1--1--1,,1|(0,0)|
+1,53,25,7,1,0,0,0,0,192,0,-1--1--1,,1|(521,270)|
+1,54,34,21,1,0,0,0,0,192,0,-1--1--1,,1|(1352,425)|
+1,55,19,21,1,0,0,0,0,192,0,-1--1--1,,1|(1443,386)|
+1,56,18,21,1,0,0,0,0,192,0,-1--1--1,,1|(1522,352)|
+1,57,20,21,1,0,0,0,0,192,0,-1--1--1,,1|(1682,399)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Food and FRASS
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,FOOD PER BIN,839,493,75,30,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,CARROTS PER BIN,794,246,75,30,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,FRASS per week,503,223,75,30,8,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,total food,659,370,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,5,1,4,1,0,0,0,0,64,0,-1--1--1,,1|(774,427)|
+1,6,2,4,1,0,0,0,0,64,0,-1--1--1,,1|(761,309)|
+10,7,FRACTION OF FRASS TO FOOD,574,130,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,8,7,3,1,0,0,0,0,64,0,-1--1--1,,1|(553,125)|
+10,9,FOOD CONSUMED PER MEALWORM,567,563,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,10,food consumed,335,395,75,30,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,11,9,10,1,0,0,0,0,64,0,-1--1--1,,1|(375,441)|
+1,12,4,10,1,0,0,0,0,64,0,-1--1--1,,1|(537,340)|
+1,13,10,3,1,0,0,0,0,64,0,-1--1--1,,1|(388,310)|
+10,14,Mealworm Bins,100,401,75,30,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,15,14,10,1,0,0,0,0,192,0,-1--1--1,,1|(249,358)|
+10,16,FRASS packages supply,338,160,69,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,17,3,16,1,0,0,0,0,192,0,-1--1--1,,1|(452,187)|
+10,18,KG OF FRASS PER PACKAGE,176,206,66,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,19,18,16,1,0,0,0,0,192,0,-1--1--1,,1|(211,171)|
+10,20,FRASS Capacity,158,55,53,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,21,total bins,625,235,51,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,22,21,4,1,0,0,0,0,192,0,-1--1--1,,1|(653,273)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Mealworm Customers
+$192-192-192,0,Times New Roman|12||0-0-0|0-0-0|0-0-255|-1--1--1|-1--1--1|96,96,100,0
+10,1,Potential Customers Not Using Mealworms,75,507,59,42,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Potential Customers Using Mealworms,70,762,60,33,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,INITIAL HOUSEHOLDS,-120,405,55,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,FRACTION OF CUSTOMERS USING MEALWORMS,-13,642,77,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,initial potential mealworm customers,-412,474,50,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,6,FRACTION OF HOUSEHOLD WHO ARE POTENTIAL MEALWORM CUSTOMERS,-473,725,96,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,7,6,5,1,0,0,0,0,64,0,-1--1--1,,1|(-487,623)|
+1,8,3,5,1,0,0,0,0,64,0,-1--1--1,,1|(-244,358)|
+10,9,INITIAL POTENTIAL CUSTOMERS NOT USING MEALWORMS,186,376,77,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,10,INITIAL POTENTIAL CUSTOMERS USING MEALWORMS,-109,859,77,28,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,11,MEALWORM ADOPTION TIME,-109,669,58,33,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,12,Potential Mealworm Households Outside the System,-212,632,63,46,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,13,15,1,4,0,0,22,0,0,0,-1--1--1,,1|(-40,493)|
+1,14,15,12,100,0,0,22,0,0,0,-1--1--1,,1|(-212,493)|
+11,15,0,-102,493,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,16,household becoming customers not using mealworms,-102,520,78,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,17,19,2,4,0,0,22,0,0,0,-1--1--1,,1|(-54,762)|
+1,18,19,12,100,0,0,22,0,0,0,-1--1--1,,1|(-212,762)|
+11,19,0,-125,762,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,20,households becoming customers using mealworms,-125,789,68,19,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,21,12,16,1,0,0,0,0,64,0,-1--1--1,,1|(-135,587)|
+1,22,4,16,1,0,0,0,0,64,0,-1--1--1,,1|(-57,589)|
+1,23,11,16,1,0,0,0,0,64,0,-1--1--1,,1|(-97,617)|
+1,24,11,20,1,0,0,0,0,64,0,-1--1--1,,1|(-110,733)|
+1,25,4,20,1,0,0,0,0,64,0,-1--1--1,,1|(-66,703)|
+1,26,12,19,1,0,0,0,0,64,0,-1--1--1,,1|(-156,691)|
+1,27,29,2,4,0,0,22,0,0,0,-1--1--1,,1|(71,683)|
+1,28,29,1,100,0,0,22,0,0,0,-1--1--1,,1|(71,587)|
+11,29,0,71,632,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,30,awareness of mealworms,136,632,57,11,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,31,1,30,1,0,0,0,0,64,0,-1--1--1,,1|(156,569)|
+10,32,FRACTION NEVER USING MEALWORMS,360,648,71,19,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,33,32,30,1,0,0,0,0,64,0,-1--1--1,,1|(267,685)|
+10,34,MEALWORM AWARENESS TIME,281,616,50,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,35,34,30,1,0,0,0,0,192,0,-1--1--1,,1|(188,633)|
+10,36,Households Never Using Mealworms,351,498,50,35,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,37,39,1,100,0,0,22,0,192,0,-1--1--1,,1|(170,499)|
+1,38,39,36,4,0,0,22,0,192,0,-1--1--1,,1|(260,499)|
+11,39,0,213,499,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,40,never using mealworms,213,530,44,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,32,40,1,0,0,0,0,192,0,-1--1--1,,1|(336,579)|
+1,42,34,40,1,0,0,0,0,192,0,-1--1--1,,1|(267,561)|
+1,43,9,1,1,0,0,0,0,192,1,-1--1--1,,1|(127,413)|
+10,44,INITIAL HOUSEHOLDS NEVER USING MEALWORMS,464,380,64,44,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,45,1,40,1,0,0,0,0,192,0,-1--1--1,,1|(184,477)|
+10,46,Mealworm Customers Waiting,370,753,51,37,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,47,49,2,100,0,0,22,0,192,0,-1--1--1,,1|(174,757)|
+1,48,49,46,4,0,0,22,0,192,0,-1--1--1,,1|(274,757)|
+11,49,0,224,757,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,50,mealworm customers choosing us,224,788,62,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,51,Customers Using Other Mealworm Company,74,941,64,38,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,52,54,2,100,0,0,22,0,192,0,-1--1--1,,1|(72,819)|
+1,53,54,51,4,0,0,22,0,192,0,-1--1--1,,1|(72,879)|
+11,54,0,72,849,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,55,mealworm customers choosing other companies,137,849,57,33,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,56,fraction choosing our mealworms,874,361,68,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,57,10,2,1,0,0,0,0,192,1,-1--1--1,,1|(21,734)|
+10,58,INITIAL MEALWORM CUSTOMERS USING OTHER COMPANY,-108,951,64,44,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,59,INITIAL MEALWORM CUSTOMERS WAITING,499,656,59,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,60,customer non customer contact for mealworms,374,1034,66,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,61,60,55,1,0,0,0,0,192,0,-1--1--1,,1|(256,1009)|
+1,62,60,50,1,0,0,0,0,192,0,-1--1--1,,1|(278,973)|
+10,63,MEALWORM CONTACT TIME,477,990,47,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,64,63,60,1,0,0,0,0,192,0,-1--1--1,,1|(442,990)|
+1,65,2,60,1,0,0,0,0,192,0,-1--1--1,,1|(183,993)|
+10,66,Mealworm Customers,671,757,48,40,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,67,69,46,100,0,0,22,0,192,0,-1--1--1,,1|(468,755)|
+1,68,69,66,4,0,0,22,0,192,0,-1--1--1,,1|(575,755)|
+11,69,0,522,755,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,70,completed mealworm customers,522,786,42,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,71,mealworm market share,402,1090,49,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,72,46,71,1,0,0,0,0,192,0,-1--1--1,,1|(529,989)|
+1,73,66,71,1,0,0,0,0,192,0,-1--1--1,,1|(578,941)|
+1,74,71,60,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,75,INITIAL MEALWORM CUSTOMERS,722,640,59,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,76,46,70,1,0,0,0,0,192,0,-1--1--1,,1|(420,805)|
+12,77,48,879,757,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,78,80,66,100,0,0,22,0,192,0,-1--1--1,,1|(749,757)|
+1,79,80,77,4,0,0,22,0,192,0,-1--1--1,,1|(830,757)|
+11,80,0,786,757,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,81,leaving mealworm market,786,787,55,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,82,66,81,1,0,0,0,0,192,0,-1--1--1,,1|(706,831)|
+1,83,75,66,1,0,0,0,0,192,1,-1--1--1,,1|(698,678)|
+10,84,mealworm delivery delay,583,861,36,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,85,84,70,1,0,0,0,0,192,0,-1--1--1,,1|(538,845)|
+1,86,88,46,100,0,0,22,0,192,0,-1--1--1,,1|(370,933)|
+1,87,88,51,4,0,0,22,0,192,0,-1--1--1,,1|(222,933)|
+11,88,0,315,933,8,6,33,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,89,mealworm customers leaving,315,964,42,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,90,fraction of mealworm customers leaving,458,886,68,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,91,90,89,1,0,0,0,0,192,0,-1--1--1,,1|(416,928)|
+1,92,90,70,1,0,0,0,0,192,0,-1--1--1,,1|(475,845)|
+1,93,84,89,1,0,0,0,0,192,0,-1--1--1,,1|(410,965)|
+1,94,46,89,1,0,0,0,0,192,0,-1--1--1,,1|(408,842)|
+1,95,59,46,1,0,0,0,0,192,1,-1--1--1,,1|(464,697)|
+10,96,MEALWORM MARKETING TIME,-59,1045,54,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,97,96,50,1,0,0,0,0,192,0,-1--1--1,,1|(57,1014)|
+1,98,2,50,1,0,0,0,0,192,0,-1--1--1,,1|(147,815)|
+1,99,2,71,1,0,0,0,0,192,0,-1--1--1,,1|(79,1039)|
+1,100,51,71,1,0,0,0,0,192,0,-1--1--1,,1|(153,1036)|
+1,101,96,55,1,0,0,0,0,192,0,-1--1--1,,1|(-2,1011)|
+1,102,2,55,1,0,0,0,0,192,0,-1--1--1,,1|(83,820)|
+10,103,leaving mealworm market,-363,807,33,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,104,NORMAL TIME AS MEALWORM CUSTOMER,989,822,68,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,105,TARGET MEALWORM DELIVERY DELAY,953,991,86,33,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+12,106,48,554,498,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,107,109,36,100,0,0,22,0,192,0,-1--1--1,,1|(430,498)|
+1,108,109,106,4,0,0,22,0,192,0,-1--1--1,,1|(507,498)|
+11,109,0,465,498,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,110,never using mealworms leaving,465,529,72,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,111,48,74,1095,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,112,114,51,100,0,0,22,0,192,0,-1--1--1,,1|(74,1001)|
+1,113,114,111,4,0,0,22,0,192,0,-1--1--1,,1|(74,1061)|
+11,114,0,74,1029,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,115,using other mealworms leaving,154,1029,72,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,116,104,110,1,0,0,0,0,192,0,-1--1--1,,1|(890,647)|
+1,117,104,115,1,0,0,0,0,192,0,-1--1--1,,1|(289,1065)|
+1,118,36,110,1,0,0,0,0,192,0,-1--1--1,,1|(400,566)|
+1,119,51,115,1,0,0,0,0,192,0,-1--1--1,,1|(157,997)|
+1,120,44,36,1,0,0,0,0,192,1,-1--1--1,,1|(392,414)|
+1,121,58,51,1,0,0,0,0,192,1,-1--1--1,,1|(-29,919)|
+12,122,48,-410,630,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,123,125,122,100,0,0,22,0,192,0,-1--1--1,,1|(-368,630)|
+1,124,125,12,4,0,0,22,0,192,0,-1--1--1,,1|(-299,630)|
+11,125,0,-330,630,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,126,new potential mealworm customers,-330,671,51,33,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,127,never using mealworms leaving,-393,547,49,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,128,using other mealworms leaving,-485,801,48,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,129,127,126,1,0,0,0,0,192,0,-1--1--1,,1|(-357,578)|
+1,130,103,126,1,0,0,0,0,192,0,-1--1--1,,1|(-318,760)|
+1,131,128,126,1,0,0,0,0,192,0,-1--1--1,,1|(-388,771)|
+1,132,5,12,1,0,0,0,0,192,1,-1--1--1,,1|(-329,497)|
+1,133,104,81,1,0,0,0,0,192,0,-1--1--1,,1|(856,831)|
+10,134,PRICE OF DRIED MEALWORMS,1173,421,69,33,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,135,EFFECT OF PRICE ON FRACTION CHOOSING US,1071,282,81,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,136,NORMAL FRACTION CHOOSING OUR MEALWORMS,757,268,73,44,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,137,fraction choosing our mealworms,300,871,72,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,138,137,50,1,0,0,0,0,192,0,-1--1--1,,1|(314,840)|
+1,139,137,55,1,0,0,0,0,192,0,-1--1--1,,1|(213,891)|
+10,140,EFFECT OF DELIVERY DELAY ON CUSTOMERS LEAVING,778,1115,80,44,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,141,COMPETITORS MEALWORM PRICE,987,495,68,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,142,136,56,1,0,0,0,0,192,0,-1--1--1,,1|(831,296)|
+1,143,135,56,1,0,0,0,0,192,0,-1--1--1,,1|(952,301)|
+1,144,134,56,1,0,0,0,0,192,0,-1--1--1,,1|(1063,366)|
+1,145,141,56,1,0,0,0,0,192,0,-1--1--1,,1|(973,428)|
+10,146,mealworm delivery delay effect,691,956,72,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,147,84,146,1,0,0,0,0,192,0,-1--1--1,,1|(669,904)|
+1,148,105,146,1,0,0,0,0,192,0,-1--1--1,,1|(846,912)|
+1,149,140,146,1,0,0,0,0,192,0,-1--1--1,,1|(788,1018)|
+1,150,146,90,1,0,0,0,0,192,0,-1--1--1,,1|(592,959)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Mealworm Backlog
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,100,0
+10,1,mealworm customers choosing us,299,187,52,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,2,New Mealworm Backlog,417,318,61,39,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,3,Mealworm Products in Use,739,187,67,37,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,4,Replacement Mealworm Backlog,1105,362,61,38,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,5,48,229,318,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,6,8,5,100,0,0,22,0,192,0,-1--1--1,,1|(269,318)|
+1,7,8,2,4,0,0,22,0,192,0,-1--1--1,,1|(333,318)|
+11,8,0,305,318,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,9,new mealworm orders,305,349,58,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,10,12,2,100,0,0,22,0,192,0,-1--1--1,,1|(524,317)|
+1,11,12,3,4,0,0,22,0,192,0,-1--1--1,,1|(576,187)|
+11,12,0,576,317,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,13,new mealworm shipments,576,348,58,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+11,14,0,890,318,6,8,2,3,0,0,1,0,0,0,0,0,0,0,0,0
+1,15,17,4,100,0,0,22,0,192,0,-1--1--1,,1|(893,399)|
+1,16,17,3,4,0,0,22,0,192,0,-1--1--1,,1|(736,307)|
+11,17,0,736,399,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,18,replacement mealworm shipments,736,440,46,33,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,19,21,3,100,0,0,22,0,192,0,-1--1--1,,1|(847,183)|
+1,20,21,4,4,0,0,22,0,192,0,-1--1--1,,1|(1105,183)|
+11,21,0,897,183,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,22,replacement mealworm orders,951,183,46,23,40,3,0,0,1,0,0,0,0,0,0,0,0,0
+1,23,1,9,1,0,0,0,0,192,0,-1--1--1,,1|(286,236)|
+1,24,9,2,1,0,0,0,0,192,0,-1--1--1,,1|(332,389)|
+10,25,total mealworm shipments,622,502,59,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,26,total mealworm backlog,698,603,59,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,27,2,26,1,0,0,0,0,192,0,-1--1--1,,1|(458,461)|
+1,28,4,26,1,0,0,0,0,192,0,-1--1--1,,1|(1030,524)|
+1,29,25,18,1,0,0,0,0,192,0,-1--1--1,,1|(681,457)|
+1,30,25,13,1,0,0,0,0,192,0,-1--1--1,,1|(568,439)|
+1,31,26,13,1,0,0,0,0,192,0,-1--1--1,,1|(563,519)|
+1,32,2,13,1,0,0,0,0,192,0,-1--1--1,,1|(481,387)|
+1,33,26,18,1,0,0,0,0,192,0,-1--1--1,,1|(725,540)|
+1,34,4,18,1,0,0,0,0,192,0,-1--1--1,,1|(956,472)|
+10,35,Mealworm Customers,791,26,53,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,36,22,4,1,0,0,0,0,192,0,-1--1--1,,1|(965,260)|
+10,37,AVERAGE MEALWORM PRODUCT LIFE,1020,79,68,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,38,37,22,1,0,0,0,0,192,0,-1--1--1,,1|(957,141)|
+1,39,3,22,1,0,0,0,0,192,0,-1--1--1,,1|(859,145)|
+10,40,total mealworm orders,316,482,59,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,9,40,1,0,0,0,0,192,0,-1--1--1,,1|(263,391)|
+1,42,22,40,1,0,0,0,0,192,0,-1--1--1,,1|(511,486)|
+10,43,mealworm production,452,569,54,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,44,43,25,1,0,0,0,0,192,0,-1--1--1,,1|(536,526)|
+10,45,TARGET MEALWORM DELIVERY DELAY,862,541,86,33,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,46,45,2,1,0,0,0,0,192,1,-1--1--1,,1|(493,455)|
+1,47,45,4,1,0,0,0,0,192,1,-1--1--1,,1|(980,524)|
+10,48,mealworm packages per customer,418,223,56,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,49,48,9,1,0,0,0,0,192,0,-1--1--1,,1|(338,257)|
+1,50,48,3,1,0,0,0,0,192,1,-1--1--1,,1|(629,258)|
+1,51,35,3,1,0,0,0,0,192,1,-1--1--1,,1|(756,70)|
+10,52,COMPETITORS MEALWORM PRICE,256,115,56,26,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,53,EFFECT OF PRICE ON PACKAGES PER CUSTOMER,558,112,69,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,54,NORMAL PACKAGES PER CUSTOMER,545,176,56,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Mealworm Capacity
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,100,0
+10,1,Mealworm Backlog,967,527,42,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,2,48,764,528,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,2,100,0,0,22,0,192,0,-1--1--1,,1|(812,528)|
+1,4,5,1,4,0,0,22,0,192,0,-1--1--1,,1|(894,528)|
+11,5,0,857,528,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,mealworm orders received,857,559,59,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,1167,527,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,10,1,100,0,0,22,0,192,0,-1--1--1,,1|(1039,527)|
+1,9,10,7,4,0,0,22,0,192,0,-1--1--1,,1|(1119,527)|
+11,10,0,1075,527,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,mealworm production,1075,557,43,22,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,total mealworm orders,742,644,55,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,13,12,6,1,0,0,0,0,192,0,-1--1--1,,1|(800,618)|
+10,14,Average Mealworm Orders,611,381,70,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,15,INITIAL MEALWORM ORDERS RECEIVED,582,519,65,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,16,6,15,1,0,0,0,0,192,1,-1--1--1,,1|(740,590)|
+1,17,15,14,1,0,0,0,0,192,1,-1--1--1,,1|(613,465)|
+12,18,48,406,380,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,19,21,18,100,0,0,22,0,192,0,-1--1--1,,1|(450,380)|
+1,20,21,14,4,0,0,22,0,192,0,-1--1--1,,1|(518,380)|
+11,21,0,490,380,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,22,change in average mealworm orders received,490,421,67,33,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,23,6,22,1,0,0,0,0,192,0,-1--1--1,,1|(617,604)|
+1,24,14,22,1,0,0,0,0,192,0,-1--1--1,,1|(580,421)|
+10,25,TIME TO AVERAGE MEALWORM ORDERS,383,532,86,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,26,25,22,1,0,0,0,0,192,0,-1--1--1,,1|(438,500)|
+10,27,TARGET MEALWORM DELIVERY DELAY,840,357,80,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,28,desired mealworm backlog,740,454,70,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,29,14,28,1,0,0,0,0,192,0,-1--1--1,,1|(642,420)|
+1,30,27,28,1,0,0,0,0,192,0,-1--1--1,,1|(825,400)|
+1,31,28,1,1,0,0,0,0,192,1,-1--1--1,,1|(843,493)|
+10,32,mealworm delivery delay,1034,621,53,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,33,1,32,1,0,0,0,0,192,0,-1--1--1,,1|(966,579)|
+1,34,11,32,1,0,0,0,0,192,0,-1--1--1,,1|(1076,591)|
+10,35,TIME TO CORRECT MEALWORM BACKLOG,1073,357,87,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,36,mealworm backlog correction,950,415,72,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,37,28,36,1,0,0,0,0,192,0,-1--1--1,,1|(848,475)|
+1,38,35,36,1,0,0,0,0,192,0,-1--1--1,,1|(1061,400)|
+1,39,1,36,1,0,0,0,0,192,0,-1--1--1,,1|(978,484)|
+10,40,desired mealworm production,886,258,70,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,14,40,1,0,0,0,0,192,0,-1--1--1,,1|(705,315)|
+1,42,36,40,1,0,0,0,0,192,0,-1--1--1,,1|(957,350)|
+10,43,desired mealworm capacity,740,199,70,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,44,40,43,1,0,0,0,0,192,0,-1--1--1,,1|(834,223)|
+10,45,Mealworm Capacity,875,98,51,23,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,46,48,669,97,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,47,49,46,100,0,0,22,0,192,0,-1--1--1,,1|(718,97)|
+1,48,49,45,4,0,0,22,0,192,0,-1--1--1,,1|(796,97)|
+11,49,0,763,97,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,50,mealworm capacity investment,763,128,74,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,51,48,1061,98,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,52,54,45,100,0,0,22,0,192,0,-1--1--1,,1|(948,98)|
+1,53,54,51,4,0,0,22,0,192,0,-1--1--1,,1|(1016,98)|
+11,54,0,976,98,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,55,mealworm capacity reductions,976,129,74,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,56,mealworm capacity adjustment,621,165,74,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,57,TIME TO ADJUST MEALWORM CAPACITY,482,78,77,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,58,57,56,1,0,0,0,0,192,0,-1--1--1,,1|(524,138)|
+1,59,43,56,1,0,0,0,0,192,0,-1--1--1,,1|(664,204)|
+1,60,45,56,1,0,0,0,0,192,0,-1--1--1,,1|(727,164)|
+10,61,replacement mealworm investment,868,25,46,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,62,55,61,1,0,0,0,0,192,0,-1--1--1,,1|(953,58)|
+1,63,56,50,1,0,0,0,0,192,0,-1--1--1,,1|(673,136)|
+1,64,61,50,1,0,0,0,0,192,0,-1--1--1,,1|(794,59)|
+10,65,MEALWORM CAPACITY LIFE,1137,168,71,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,66,65,55,1,0,0,0,0,192,0,-1--1--1,,1|(1049,157)|
+1,67,45,55,1,0,0,0,0,192,0,-1--1--1,,1|(896,148)|
+1,68,43,45,1,0,0,0,0,192,1,-1--1--1,,1|(818,176)|
+10,69,potential mealworm production,1153,259,43,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,70,45,69,1,0,0,0,0,192,0,-1--1--1,,1|(949,204)|
+1,71,40,11,1,0,0,0,0,192,0,-1--1--1,,1|(995,356)|
+10,72,mealworm packages supply,1442,356,48,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,73,facilities,606,-2,45,12,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,74,MAXIMUM FACILITIES,731,-10,57,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,75,mealworm packages demand,1269,359,61,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,76,69,75,1,0,0,0,0,192,0,-1--1--1,,1|(1175,316)|
+10,77,mealworm packages limit,1317,445,54,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,78,75,77,1,0,0,0,0,192,0,-1--1--1,,1|(1296,396)|
+1,79,72,77,1,0,0,0,0,192,0,-1--1--1,,1|(1376,382)|
+1,80,77,11,1,0,0,0,0,192,0,-1--1--1,,1|(1145,455)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*FRASS Customers
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,100,0
+10,1,Potential Customers Not Using FRASS,33,320,55,37,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,2,Potential Customers Using FRASS,32,580,60,33,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+10,3,FRACTION OF CUSTOMERS USING FRASS,-51,460,81,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,4,initial potential FRASS customers,-454,292,53,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,5,FRACTION OF HOUSEHOLDs WHO ARE POTENTIAL FRASS CUSTOMERS,-511,543,107,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,6,5,4,1,0,0,0,0,64,0,-1--1--1,,1|(-526,442)|
+10,7,INITIAL POTENTIAL CUSTOMERS NOT USING FRASS,148,194,73,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,8,INITIAL POTENTIAL CUSTOMERS USING FRASS,-147,677,81,27,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,9,FRASS ADOPTION TIME,-147,487,56,10,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+10,10,Potential FRASS Households Outside the System,-259,435,54,31,3,131,0,0,0,0,0,0,0,0,0,0,0,0
+1,11,13,1,4,0,0,22,0,0,0,-1--1--1,,1|(-78,311)|
+1,12,13,10,100,0,0,22,0,0,0,-1--1--1,,1|(-259,311)|
+11,13,0,-140,311,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,14,households becoming customers not using FRASS,-140,338,76,27,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,15,17,2,4,0,0,22,0,0,0,-1--1--1,,1|(-92,580)|
+1,16,17,10,100,0,0,22,0,0,0,-1--1--1,,1|(-259,580)|
+11,17,0,-163,580,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,18,households becoming customers using FRASS,-163,607,85,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,19,10,14,1,0,0,0,0,64,0,-1--1--1,,1|(-180,402)|
+1,20,3,14,1,0,0,0,0,64,0,-1--1--1,,1|(-95,407)|
+1,21,9,14,1,0,0,0,0,64,0,-1--1--1,,1|(-135,435)|
+1,22,9,18,1,0,0,0,0,64,0,-1--1--1,,1|(-148,551)|
+1,23,3,18,1,0,0,0,0,64,0,-1--1--1,,1|(-104,521)|
+1,24,10,17,1,0,0,0,0,64,0,-1--1--1,,1|(-194,500)|
+1,25,27,2,4,0,0,22,0,0,0,-1--1--1,,1|(33,502)|
+1,26,27,1,100,0,0,22,0,0,0,-1--1--1,,1|(33,401)|
+11,27,0,33,450,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,28,awareness of FRASS,98,450,49,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,29,1,28,1,0,0,0,0,64,0,-1--1--1,,1|(118,383)|
+10,30,FRACTION NEVER USING FRASS,322,466,73,18,8,3,0,0,0,0,0,0,0,0,0,0,0,0
+1,31,30,28,1,0,0,0,0,64,0,-1--1--1,,1|(229,503)|
+10,32,FRASS AWARENESS TIME,243,434,68,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,33,32,28,1,0,0,0,0,192,0,-1--1--1,,1|(150,451)|
+10,34,Households Never Using FRASS,317,319,54,34,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,35,37,1,100,0,0,22,0,192,0,-1--1--1,,1|(128,317)|
+1,36,37,34,4,0,0,22,0,192,0,-1--1--1,,1|(222,317)|
+11,37,0,175,317,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,38,never using FRASS,175,348,42,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,39,30,38,1,0,0,0,0,192,0,-1--1--1,,1|(298,397)|
+1,40,32,38,1,0,0,0,0,192,0,-1--1--1,,1|(229,379)|
+1,41,7,1,1,0,0,0,0,192,1,-1--1--1,,1|(89,227)|
+10,42,INITIAL HOUSEHOLDS NEVER USING FRASS,426,198,89,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,43,1,38,1,0,0,0,0,192,0,-1--1--1,,1|(146,291)|
+10,44,FRASS Customers Waiting,332,571,51,37,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,45,47,2,100,0,0,22,0,192,0,-1--1--1,,1|(136,575)|
+1,46,47,44,4,0,0,22,0,192,0,-1--1--1,,1|(236,575)|
+11,47,0,186,575,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,48,customers choosing our FRASS,186,606,51,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,49,Customers Using Other FRASS,28,759,64,38,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,50,52,2,100,0,0,22,0,192,0,-1--1--1,,1|(34,637)|
+1,51,52,49,4,0,0,22,0,192,0,-1--1--1,,1|(34,697)|
+11,52,0,34,667,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,53,customers choosing other FRASS,99,667,73,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,54,8,2,1,0,0,0,0,192,1,-1--1--1,,1|(-17,552)|
+10,55,INITIAL CUSTOMERS USING OTHER FRASS,-146,769,88,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,56,INITIAL FRASS CUSTOMERS WAITING,461,474,62,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,57,FRASS customer non customer contact,336,852,69,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,58,57,53,1,0,0,0,0,192,0,-1--1--1,,1|(218,827)|
+1,59,57,48,1,0,0,0,0,192,0,-1--1--1,,1|(240,791)|
+10,60,FRASS CONTACT TIME,442,811,41,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,61,60,57,1,0,0,0,0,192,0,-1--1--1,,1|(406,810)|
+1,62,2,57,1,0,0,0,0,192,0,-1--1--1,,1|(145,811)|
+10,63,FRASS Customers,633,575,48,40,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,64,66,44,100,0,0,22,0,192,0,-1--1--1,,1|(430,573)|
+1,65,66,63,4,0,0,22,0,192,0,-1--1--1,,1|(537,573)|
+11,66,0,484,573,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,67,completed FRASS customers,484,604,45,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,68,FRASS market share,364,908,54,10,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,69,44,68,1,0,0,0,0,192,0,-1--1--1,,1|(491,807)|
+1,70,68,57,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,71,INITIAL FRASS CUSTOMERS,684,458,60,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,72,44,67,1,0,0,0,0,192,0,-1--1--1,,1|(382,623)|
+12,73,48,841,575,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,74,76,63,100,0,0,22,0,192,0,-1--1--1,,1|(711,575)|
+1,75,76,73,4,0,0,22,0,192,0,-1--1--1,,1|(792,575)|
+11,76,0,748,575,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,77,leaving FRASS market,748,605,59,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,78,63,77,1,0,0,0,0,192,0,-1--1--1,,1|(668,649)|
+1,79,71,63,1,0,0,0,0,192,1,-1--1--1,,1|(660,496)|
+10,80,mealworm delivery delay,1494,858,58,10,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,81,83,44,100,0,0,22,0,192,0,-1--1--1,,1|(332,751)|
+1,82,83,49,4,0,0,22,0,192,0,-1--1--1,,1|(180,751)|
+11,83,0,277,751,8,6,33,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,84,FRASS customers leaving,277,782,39,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,85,EFFECT OF DELIVERY DELAY ON CUSTOMERS LEAVING,802,957,97,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,86,fraction of FRASS customers leaving,420,704,73,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,87,86,84,1,0,0,0,0,192,0,-1--1--1,,1|(378,746)|
+1,88,86,67,1,0,0,0,0,192,0,-1--1--1,,1|(437,663)|
+1,89,44,84,1,0,0,0,0,192,0,-1--1--1,,1|(370,660)|
+1,90,56,44,1,0,0,0,0,192,1,-1--1--1,,1|(426,515)|
+10,91,FRASS MARKETING TIME,-97,863,59,10,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,92,91,48,1,0,0,0,0,192,0,-1--1--1,,1|(19,832)|
+1,93,2,48,1,0,0,0,0,192,0,-1--1--1,,1|(109,633)|
+1,94,2,68,1,0,0,0,0,192,0,-1--1--1,,1|(41,857)|
+1,95,49,68,1,0,0,0,0,192,0,-1--1--1,,1|(110,855)|
+1,96,91,53,1,0,0,0,0,192,0,-1--1--1,,1|(-40,829)|
+1,97,2,53,1,0,0,0,0,192,0,-1--1--1,,1|(45,638)|
+10,98,leaving FRASS market,-401,625,37,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,99,INITIAL HOUSEHOLDS,-255,190,69,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,100,99,4,1,0,0,0,0,192,0,-1--1--1,,1|(-359,214)|
+10,101,FRASS delivery delay,544,680,58,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,102,101,67,1,0,0,0,0,192,0,-1--1--1,,1|(544,644)|
+1,103,101,84,1,0,0,0,0,192,0,-1--1--1,,1|(401,774)|
+10,104,NORMAL TIME AS FRASS CUSTOMER,969,617,67,33,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,105,TARGET FRASS DELIVERY DELAY,851,764,86,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+12,106,48,508,315,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,107,109,34,100,0,0,22,0,192,0,-1--1--1,,1|(396,315)|
+1,108,109,106,4,0,0,22,0,192,0,-1--1--1,,1|(465,315)|
+11,109,0,427,315,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,110,never using FRASS leaving,427,346,59,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,111,48,36,899,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,112,114,49,100,0,0,22,0,192,0,-1--1--1,,1|(36,815)|
+1,113,114,111,4,0,0,22,0,192,0,-1--1--1,,1|(36,868)|
+11,114,0,36,840,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,115,using other FRASS leaving,103,840,59,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,116,104,110,1,0,0,0,0,192,0,-1--1--1,,1|(855,454)|
+1,117,104,115,1,0,0,0,0,192,0,-1--1--1,,1|(234,891)|
+1,118,49,115,1,0,0,0,0,192,0,-1--1--1,,1|(115,803)|
+1,119,55,49,1,0,0,0,0,192,1,-1--1--1,,1|(-60,745)|
+1,120,34,110,1,0,0,0,0,192,0,-1--1--1,,1|(350,385)|
+1,121,42,34,1,0,0,0,0,192,1,-1--1--1,,1|(359,236)|
+12,122,48,-462,435,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,123,125,122,100,0,0,22,0,192,0,-1--1--1,,1|(-416,435)|
+1,124,125,10,4,0,0,22,0,192,0,-1--1--1,,1|(-341,435)|
+11,125,0,-375,435,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,126,new potential FRASS customers,-375,466,72,23,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,127,never using FRASS leaving,-423,346,65,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,128,using other FRASS leaving,-327,567,65,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,129,127,126,1,0,0,0,0,192,0,-1--1--1,,1|(-378,394)|
+1,130,128,126,1,0,0,0,0,192,0,-1--1--1,,1|(-322,527)|
+1,131,98,126,1,0,0,0,0,192,0,-1--1--1,,1|(-392,522)|
+1,132,4,10,1,0,0,0,0,192,1,-1--1--1,,1|(-330,331)|
+1,133,104,77,1,0,0,0,0,192,0,-1--1--1,,1|(858,648)|
+10,134,PRICE OF FRASS,956,354,42,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,135,EFFECT OF PRICE ON FRACTION CHOOSING US,807,74,87,26,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,136,COMPETITORS FRASS PRICE,1131,413,51,22,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,137,NORMAL FRACTION CHOOSING OUR FRASS,1259,244,69,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,138,fraction choosing our FRASS,976,227,56,34,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,139,fraction choosing our FRASS,263,686,56,34,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,140,139,48,1,0,0,0,0,192,0,-1--1--1,,1|(264,651)|
+1,141,139,53,1,0,0,0,0,192,0,-1--1--1,,1|(177,708)|
+10,142,FRASS delivery delay effect,624,877,68,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,143,63,68,1,0,0,0,0,192,0,-1--1--1,,1|(514,839)|
+1,144,142,86,1,0,0,0,0,192,0,-1--1--1,,1|(539,784)|
+1,145,137,138,1,0,0,0,0,192,0,-1--1--1,,1|(1151,198)|
+1,146,134,138,1,0,0,0,0,192,0,-1--1--1,,1|(918,303)|
+1,147,136,138,1,0,0,0,0,192,0,-1--1--1,,1|(1126,326)|
+1,148,135,138,1,0,0,0,0,192,0,-1--1--1,,1|(922,121)|
+1,149,101,142,1,0,0,0,0,192,0,-1--1--1,,1|(621,761)|
+1,150,105,142,1,0,0,0,0,192,0,-1--1--1,,1|(718,786)|
+1,151,85,142,1,0,0,0,0,192,0,-1--1--1,,1|(763,879)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*FRASS Backlog
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,100,0
+10,1,mealworm customers choosing us,149,254,49,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,2,New FRASS Backlog,496,450,61,39,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,3,FRASS Products in Use,818,319,67,37,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,4,Replacement FRASS Backlog,1184,494,61,38,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,5,48,308,450,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,6,8,5,100,0,0,22,0,192,0,-1--1--1,,1|(348,450)|
+1,7,8,2,4,0,0,22,0,192,0,-1--1--1,,1|(412,450)|
+11,8,0,384,450,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,9,new FRASS orders,384,480,47,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,10,12,2,100,0,0,22,0,192,0,-1--1--1,,1|(603,449)|
+1,11,12,3,4,0,0,22,0,192,0,-1--1--1,,1|(655,319)|
+11,12,0,655,449,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,13,new FRASS shipments,655,479,45,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+11,14,0,969,450,6,8,2,3,0,0,1,0,0,0,0,0,0,0,0,0
+1,15,17,4,100,0,0,22,0,192,0,-1--1--1,,1|(972,531)|
+1,16,17,3,4,0,0,22,0,192,0,-1--1--1,,1|(815,439)|
+11,17,0,815,531,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,18,replacement FRASS shipments,815,562,46,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,19,21,3,100,0,0,22,0,192,0,-1--1--1,,1|(926,315)|
+1,20,21,4,4,0,0,22,0,192,0,-1--1--1,,1|(1184,315)|
+11,21,0,976,315,8,6,33,3,0,0,4,0,0,0,0,0,0,0,0,0
+10,22,replacement FRASS orders,1030,315,46,18,40,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,23,FRASS packages per customer,558,269,67,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,24,23,9,1,0,0,0,0,192,0,-1--1--1,,1|(447,350)|
+1,25,9,2,1,0,0,0,0,192,0,-1--1--1,,1|(411,521)|
+10,26,total FRASS shipments,701,634,57,10,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,27,total FRASS backlog,777,735,53,10,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,28,2,27,1,0,0,0,0,192,0,-1--1--1,,1|(537,593)|
+1,29,4,27,1,0,0,0,0,192,0,-1--1--1,,1|(1109,656)|
+1,30,26,18,1,0,0,0,0,192,0,-1--1--1,,1|(760,589)|
+1,31,26,13,1,0,0,0,0,192,0,-1--1--1,,1|(647,571)|
+1,32,27,13,1,0,0,0,0,192,0,-1--1--1,,1|(642,651)|
+1,33,2,13,1,0,0,0,0,192,0,-1--1--1,,1|(560,519)|
+1,34,27,18,1,0,0,0,0,192,0,-1--1--1,,1|(804,672)|
+1,35,4,18,1,0,0,0,0,192,0,-1--1--1,,1|(1035,604)|
+10,36,Mealworm Customers,1457,175,49,10,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,37,23,3,1,0,0,0,0,192,1,-1--1--1,,1|(667,245)|
+1,38,36,3,1,0,0,0,0,192,1,-1--1--1,,1|(1310,137)|
+1,39,22,4,1,0,0,0,0,192,0,-1--1--1,,1|(1044,392)|
+10,40,AVERAGE FRASS PRODUCT LIFE,1099,211,68,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,41,40,22,1,0,0,0,0,192,0,-1--1--1,,1|(1036,273)|
+1,42,3,22,1,0,0,0,0,192,0,-1--1--1,,1|(938,277)|
+10,43,total FRASS orders,395,614,48,10,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,44,9,43,1,0,0,0,0,192,0,-1--1--1,,1|(342,523)|
+1,45,22,43,1,0,0,0,0,192,0,-1--1--1,,1|(590,618)|
+10,46,mealworm production,1521,646,48,10,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,47,FRASS production,586,720,48,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,48,47,26,1,0,0,0,0,192,0,-1--1--1,,1|(691,685)|
+10,49,TARGET FRASS DELIVERY DELAY,951,675,86,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,50,49,2,1,0,0,0,0,192,1,-1--1--1,,1|(571,598)|
+1,51,49,4,1,0,0,0,0,192,1,-1--1--1,,1|(1044,652)|
+10,52,PRICE OF FRASS,320,267,42,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,53,COMPETITORS FRASS PRICE,403,183,56,18,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,54,EFFECT OF PRICE ON PACKAGES PER CUSTOMER,597,181,87,26,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,55,NORMAL PACKAGES PER CUSTOMER,722,263,56,26,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,56,customers choosing our FRASS,333,339,56,26,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,57,56,9,1,0,0,0,0,192,0,-1--1--1,,1|(331,396)|
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*FRASS Capacity
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,100,0
+10,1,FRASS Backlog,765,556,42,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,2,48,562,557,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,3,5,2,100,0,0,22,0,192,0,-1--1--1,,1|(610,557)|
+1,4,5,1,4,0,0,22,0,192,0,-1--1--1,,1|(692,557)|
+11,5,0,655,557,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,6,FRASS orders received,655,587,39,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,7,48,965,556,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,8,10,1,100,0,0,22,0,192,0,-1--1--1,,1|(837,556)|
+1,9,10,7,4,0,0,22,0,192,0,-1--1--1,,1|(917,556)|
+11,10,0,873,556,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,11,FRASS production,873,586,45,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,total mealworm orders,1310,557,50,10,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+10,13,Average FRASS Orders,409,410,61,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,14,INITIAL FRASS ORDERS RECEIVED,380,548,46,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,15,6,14,1,0,0,0,0,192,1,-1--1--1,,1|(538,619)|
+1,16,14,13,1,0,0,0,0,192,1,-1--1--1,,1|(411,494)|
+12,17,48,204,409,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,18,20,17,100,0,0,22,0,192,0,-1--1--1,,1|(248,409)|
+1,19,20,13,4,0,0,22,0,192,0,-1--1--1,,1|(321,409)|
+11,20,0,288,409,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,21,change in average FRASS orders received,288,440,68,18,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,22,6,21,1,0,0,0,0,192,0,-1--1--1,,1|(415,633)|
+1,23,13,21,1,0,0,0,0,192,0,-1--1--1,,1|(378,450)|
+10,24,TIME TO AVERAGE FRASS ORDERS,181,561,43,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,25,24,21,1,0,0,0,0,192,0,-1--1--1,,1|(236,529)|
+10,26,TARGET FRASS DELIVERY DELAY,638,386,41,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,27,desired FRASS backlog,538,483,36,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,28,13,27,1,0,0,0,0,192,0,-1--1--1,,1|(440,449)|
+1,29,26,27,1,0,0,0,0,192,0,-1--1--1,,1|(623,429)|
+1,30,27,1,1,0,0,0,0,192,1,-1--1--1,,1|(641,522)|
+10,31,FRASS delivery delay,832,650,56,10,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,1,31,1,0,0,0,0,192,0,-1--1--1,,1|(764,608)|
+1,33,11,31,1,0,0,0,0,192,0,-1--1--1,,1|(874,620)|
+10,34,TIME TO CORRECT FRASS BACKLOG,871,386,48,27,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,35,FRASS backlog correction,748,444,44,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,36,27,35,1,0,0,0,0,192,0,-1--1--1,,1|(646,504)|
+1,37,34,35,1,0,0,0,0,192,0,-1--1--1,,1|(859,429)|
+1,38,1,35,1,0,0,0,0,192,0,-1--1--1,,1|(776,513)|
+10,39,desired FRASS production,684,287,46,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,40,13,39,1,0,0,0,0,192,0,-1--1--1,,1|(503,344)|
+1,41,35,39,1,0,0,0,0,192,0,-1--1--1,,1|(755,379)|
+10,42,desired FRASS capacity,538,228,38,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,43,39,42,1,0,0,0,0,192,0,-1--1--1,,1|(632,252)|
+10,44,FRASS Capacity,673,127,42,22,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,45,48,467,126,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,46,48,45,100,0,0,22,0,192,0,-1--1--1,,1|(516,126)|
+1,47,48,44,4,0,0,22,0,192,0,-1--1--1,,1|(599,126)|
+11,48,0,561,126,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,49,FRASS capacity investment,561,156,46,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,50,48,859,127,10,8,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,51,53,44,100,0,0,22,0,192,0,-1--1--1,,1|(741,127)|
+1,52,53,50,4,0,0,22,0,192,0,-1--1--1,,1|(814,127)|
+11,53,0,774,127,6,8,34,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,54,FRASS capacity reductions,774,157,45,10,40,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,55,FRASS capacity adjustment,419,194,47,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,56,TIME TO ADJUST FRASS CAPACITY,280,107,67,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,57,56,55,1,0,0,0,0,192,0,-1--1--1,,1|(322,167)|
+1,58,42,55,1,0,0,0,0,192,0,-1--1--1,,1|(462,233)|
+1,59,44,55,1,0,0,0,0,192,0,-1--1--1,,1|(525,193)|
+10,60,replacement FRASS investment,666,54,46,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,61,54,60,1,0,0,0,0,192,0,-1--1--1,,1|(751,87)|
+1,62,55,49,1,0,0,0,0,192,0,-1--1--1,,1|(471,165)|
+1,63,60,49,1,0,0,0,0,192,0,-1--1--1,,1|(592,88)|
+10,64,FRASS CAPACITY LIFE,935,197,42,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,65,64,54,1,0,0,0,0,192,0,-1--1--1,,1|(847,186)|
+1,66,44,54,1,0,0,0,0,192,0,-1--1--1,,1|(694,177)|
+1,67,42,44,1,0,0,0,0,192,1,-1--1--1,,1|(616,205)|
+10,68,potential FRASS production,898,282,46,18,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,69,44,68,1,0,0,0,0,192,0,-1--1--1,,1|(729,223)|
+1,70,39,11,1,0,0,0,0,192,0,-1--1--1,,1|(793,385)|
+10,71,total FRASS orders,513,712,55,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,72,71,6,1,0,0,0,0,192,0,-1--1--1,,1|(616,664)|
+10,73,FRASS packages demand,1013,369,61,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,74,FRASS packages supply,1173,376,74,23,8,2,0,3,-1,0,0,0,128-128-128,0-0-0,|||128-128-128,0,0,0,0,0,0
+1,75,68,73,1,0,0,0,0,192,0,-1--1--1,,1|(957,315)|
+10,76,FRASS packages limit,1022,452,54,23,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,77,73,76,1,0,0,0,0,192,0,-1--1--1,,1|(1036,407)|
+1,78,74,76,1,0,0,0,0,192,0,-1--1--1,,1|(1145,419)|
+1,79,76,11,1,0,0,0,0,192,0,-1--1--1,,1|(925,473)|
+///---\\\
+:L<%^E!@
+1:Plus 300 percent.vdfx
+1:Plus 200 percent.vdfx
+1:Plus 100 percent.vdfx
+1:Plus 0 percent.vdfx
+4:Time
+5:EFFECT OF PRICE ON FRACTION CHOOSING US
+9:Plus 300 percent
+19:100,7
+24:0
+25:520
+26:520
+22:$,Dollar,Dollars,$s
+22:Beetles,Eggs,Mealworms,Pupa
+22:Day,Days
+22:Hour,Hours
+22:Month,Months
+22:Person,People,Persons
+22:Unit,Units
+22:Week,Weeks
+22:Year,Years
+23:0
+15:0,0,0,0,0,0
+27:2,
+34:0,
+42:0
+72:0
+73:0
+35:Date
+36:YYYY-MM-DD
+37:2000
+38:1
+39:1
+40:2
+41:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Courier|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
